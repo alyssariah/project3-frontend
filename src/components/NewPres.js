@@ -58,11 +58,24 @@ function NewPres(){
         setPoint('')
     }
 
+    const getPoints = async() => {
+        const presentation
+    }
+
+    const renderPoints = points.map((point, index) => {
+        if(points.length > 0){
+            return(
+                <li>{point.point}</li>
+            )
+        }
+    })
+
     const rendersections = sections.map((section, index)=> {
         if(sections.length>0){
         return(
             <div>
             <p>{section.title} {section.time}</p>
+            <ul>{renderPoints}</ul>
             <label className="pointLabel">Add Talking Point: </label> <input type="text" value={point} onChange={pointChange}/>
             <button onClick={() => pointSubmit(section._id)}>+</button>
             </div>
