@@ -31,9 +31,11 @@ function NewPres(){
     }
     const presentation = getPresById(presID)
     const rendersections = presentation.sections.map((section, index)=> {
+        if(presentation.sections.length>0){
         return(
             <p>{section.title} {section.time}</p>
         )
+        }
     })
 
     return(
@@ -47,13 +49,15 @@ function NewPres(){
         }
 
         {showForm && 
-
-        <form onSubmit={sectionSubmit}>
+        <>
+        {rendersections}
+        <form>
             <h4>Add A Section</h4>
             <input type="text" name="title" onChange={titleChange}/>
             <input type="text" name="time"onChange={timeChange}/>
-            <button>+</button>
+            <button onClick={sectionSubmit}>+</button>
         </form>
+        </>
         }
         </>
 
