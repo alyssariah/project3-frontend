@@ -6,20 +6,20 @@ function CreateForm(){
     const[showForm, setShowForm] = useState(false)
     const[showStart, setShowStart] = useState(true)
     const [name, setName] = useState('')
-    const[presID, setPresId] = useState()
+    const[presID, setPresID] = useState()
     const [title, setTitle] = useState('')
     const [time, setTime] = useState('')
+    const[sectID, setSectID] = useState()
 
     const nameChange = (e) => {
         setName(e.target.value)
     }
     const handleSubmit = () => {
-        const json = createPresentation(name)
+        const json = createPresentation({"name": name})
         setPresID(json._id)
         setShowStart(false)
         setShowForm(true)
     }
-
     const titleChange = (e) => {
         setTitle(e.target.value)
     }
@@ -27,10 +27,8 @@ function CreateForm(){
         setTime(e.target.value)
     }
     const handleFormSubmit = () => {
-        const json = createPresentati(name)
-        setPresID(json._id)
-        setShowStart(false)
-        setShowForm(true)
+        const json = createSection({"title": title, "time": time})
+        setSectID(json._id)
     }
 
     return(
@@ -48,7 +46,7 @@ function CreateForm(){
             <h4>Add A Section</h4>
             <input type="text" name="title" onChange={titleChange}/>
             <input type="text" name="time"onChange={timeChange}/>
-            <div>+</div>
+            <button>+</button>
         </form>
         }
         </>
