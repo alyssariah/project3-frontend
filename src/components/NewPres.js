@@ -1,5 +1,6 @@
-import React from 'react'
-import {createPres, createSect, createTalk} from '../services/api-helper'
+import React, {useState, useEffect} from 'react'
+import {createPres} from '../services/api-helper'
+import {createSect } from '../services/section-api-helper'
 
 
 function NewPres(){
@@ -15,7 +16,7 @@ function NewPres(){
         setName(e.target.value)
     }
     const handleSubmit = () => {
-        const json = createPresentation({"name": name})
+        const json = createPres({"name": name})
         setPresID(json._id)
         setShowStart(false)
         setShowForm(true)
@@ -27,7 +28,7 @@ function NewPres(){
         setTime(e.target.value)
     }
     const handleFormSubmit = () => {
-        const json = createSection({"title": title, "time": time})
+        const json = createSect({"title": title, "time": time})
         setSectID(json._id)
     }
 
