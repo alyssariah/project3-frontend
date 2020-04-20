@@ -12,6 +12,8 @@ function NewPres(){
     const [title, setTitle] = useState('')
     const [time, setTime] = useState()
 
+    const total = 0;
+
     const nameChange = (e) => {
         setName(e.target.value)
     }
@@ -70,6 +72,7 @@ function NewPres(){
             <input type="text" value={time} onChange={timeChange}/>
             <button onClick={sectionSubmit}>+</button>
         </div>
+        <p>Total time: {total}</p>
         </>
         }
         </>
