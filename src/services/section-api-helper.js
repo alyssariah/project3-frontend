@@ -13,8 +13,8 @@ export const createSect = async (presId, body) => {
 }
 
 //update
-export const updateSect = async (presId, sectId) => {
-    const resp = await api.put(`/sections/${presId}/${sectId}`);
+export const updateSect = async (presId, sectId, body) => {
+    const resp = await api.put(`/sections/${presId}/${sectId}`, body);
     return resp.data
 }
 

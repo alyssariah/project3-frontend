@@ -13,7 +13,7 @@ export const deleteTalk = async (presId, sectId) => {
 }
 
 //create   
-    export const createTalk = async (presId, sectId, talkId) => {
-    const resp = await api.post(`/talkpoint/${presId}/${sectId}/${talkId}`, talkId);
+    export const createTalk = async (presId, sectId, talkId, body) => {
+    const resp = await api.post(`/talkpoint/${presId}/${sectId}/${talkId}`, body);
     return resp.data
 }
