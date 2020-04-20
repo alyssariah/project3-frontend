@@ -7,7 +7,6 @@ function NewPres(){
     const[showForm, setShowForm] = useState(false)
     const[showStart, setShowStart] = useState(true)
     const[sections, setSections] = useState([])
-
     const [name, setName] = useState('')
     const[presID, setPresID] = useState()
     const [title, setTitle] = useState('')
