@@ -2,7 +2,7 @@ import React from 'react'
 import {createPresentation, createSection, createTalkingPoint} from '../services/api-helper'
 
 
-function CreateForm(){
+function NewPres(){
     const[showForm, setShowForm] = useState(false)
     const[showStart, setShowStart] = useState(true)
     const [name, setName] = useState('')
@@ -53,4 +53,4 @@ function CreateForm(){
 
     )
 }
-export default CreateForm
+export default NewPres
