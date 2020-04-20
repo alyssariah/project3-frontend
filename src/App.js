@@ -1,8 +1,8 @@
 import React from 'react';
 import Home from './components/Home';
-import Pres from './components/Pres';
+// import Pres from './components/Pres';
 import NewPres from './components/NewPres';
-import UpdatePres from './components/UpdatePres';
+// import UpdatePres from './components/UpdatePres';
 
 import "./styles.css"
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { Link, Switch, Route, Redirect } from 'react-router-dom';
 function App() {
   return (
     <>
-    <header><Link to ="/">Presentation Icon</Link><div>i</div></header>
+    <header><Link to ="/"><h1>Presentation Timer</h1></Link><div>i</div></header>
     <Switch>
 	      <Route exact path="/" component={Home}/>
 	      {/* <Route exact path="/pres" component={Pres}/>
