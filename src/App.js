@@ -4,7 +4,7 @@ import Home from './components/Home';
 import NewPres from './components/NewPres';
 // import UpdatePres from './components/UpdatePres';
 
-import "./styles.css"
+import "./App.css"
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
