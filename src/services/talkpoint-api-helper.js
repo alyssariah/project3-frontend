@@ -12,7 +12,7 @@ export const deleteTalk = async (presId, sectId) => {
     return resp.data
 }
 
-//create    is what is coming after the , an ouputting this onto the body? -> talkId
+//create   
     export const createTalk = async (presId, sectId, talkId) => {
     const resp = await api.post(`/talkpoint/${presId}/${sectId}/${talkId}`, talkId);
     return resp.data
