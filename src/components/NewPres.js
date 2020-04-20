@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {createPres, getPresById} from '../services/api-helper'
-import {createSect} from '../services/section-api-helper'
+import {createSect, findById} from '../services/section-api-helper'
 import '../css/newpres.css'
 import { createTalk } from '../services/talkpoint-api-helper'
 
@@ -15,6 +15,8 @@ function NewPres(){
     const [time, setTime] = useState()
     const [totalTime, setTotalTime] = useState(0)
     const [point, setPoint] = useState('')
+    const [sectId, setSectId] = useState()
+    const [pointsArr, setPointsArr] = useState([])
 
     const total = 0;
 
@@ -53,17 +55,21 @@ function NewPres(){
         setSections(presentation.sections)
     }
 
-    const pointSubmit = async(sectId) => {
-        const json = await createTalk(presID, sectId, {"point": point})
+    const pointSubmit = async(sectionInput) => {
+        const json = await createTalk(presID, sectionInput, {"point": point})
         setPoint('')
+        setSectId(sectionInput)
+        getPoints()
     }
 
     const getPoints = async() => {
-        const presentation
+        const section = await findById(sectId)
+        console.log('section', section)
+        setPointsArr(section.talking_points)
     }
 
-    const renderPoints = points.map((point, index) => {
-        if(points.length > 0){
+    const renderPoints = pointsArr.map((point, index) => {
+        if(pointsArr.length > 0){
             return(
                 <li>{point.point}</li>
             )
