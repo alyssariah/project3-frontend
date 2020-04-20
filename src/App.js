@@ -13,9 +13,9 @@ function App() {
     <header><Link to ="/"><h1>Presentation Timer</h1></Link><div>i</div></header>
     <Switch>
 	      <Route exact path="/" component={Home}/>
-	      {/* <Route exact path="/pres" component={Pres}/>
+	      {/* <Route exact path="/pres" component={Pres}/> */}
         <Route exact path="/new" component={NewPres}/>
-        <Route exact path="/update" component={UpdatePres}/> */}
+        {/* <Route exact path="/update" component={UpdatePres}/> */}
        <Redirect to="/"/>
     </Switch>
     </>
