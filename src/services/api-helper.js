@@ -9,6 +9,11 @@ export const getAllPres = async () => {
     return resp.data
 }
 
+export const getPresById = async (id) => {
+    const resp = await api.get(`pres/${id}`);
+    return resp.data
+}
+
 export const createPres = async (pres) => {
     const resp = await api.post("/pres", pres);
     return resp.data
