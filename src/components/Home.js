@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import { getAllPres} from '../services/api-helper'
+import '../css/home.css'
 //createPres, deletePres, updatePres
 function Home(){
 
@@ -18,15 +19,15 @@ function Home(){
 
     const renderPres = pres.map( (pres, index) => {
         return (
-           <div 
-            key={index}>{pres.name}
-          </div>)
+           <h2 
+            key={index} className="presList">{pres.name}
+          </h2>)
       })
 
 
 return (<div className="presentationsGroup">
 
-{!isLoading && {renderPres}}
+{!isLoading && <div>{renderPres}</div>}
 
 </div>
 )}
