@@ -6,16 +6,19 @@ import {createSect} from '../services/section-api-helper'
 function NewPres(){
     const[showForm, setShowForm] = useState(false)
     const[showStart, setShowStart] = useState(true)
+    const[sections, setSections] = useState([])
+
     const [name, setName] = useState('')
     const[presID, setPresID] = useState()
     const [title, setTitle] = useState('')
-    const [time, setTime] = useState('')
+    const [time, setTime] = useState()
 
     const nameChange = (e) => {
         setName(e.target.value)
     }
-    const nameSubmit = () => {
-        const json = createPres({"name": name})
+    const nameSubmit = async() => {
+        const json = await createPres({"name": name})
+        console.log("json", json)
         setPresID(json._id)
         setShowStart(false)
         setShowForm(true)
@@ -26,12 +29,20 @@ function NewPres(){
     const timeChange = (e) => {
         setTime(e.target.value)
     }
-    const sectionSubmit = () => {
-        const json = createSect({"title": title, "time": time})
+    const sectionSubmit = async() => {
+        const json = await createSect(presID, {"title": title, "time": time})
+        console.log("sections", json)
+        setTime('')
+        setTitle('')
     }
-    const presentation = getPresById(presID)
-    const rendersections = presentation.sections.map((section, index)=> {
-        if(presentation.sections.length>0){
+
+    const getSections = async() => {
+        const presentation = await getPresById(presID)
+        console.log("presentation", presentation)
+        setSections(presentation.sections)
+    }
+    const rendersections = sections.map((section, index)=> {
+        if(sections.length>0){
         return(
             <p>{section.title} {section.time}</p>
         )
@@ -47,14 +58,16 @@ function NewPres(){
             <button onClick={nameSubmit}>Submit</button>
         </div>
         }
-
         {showForm && 
-        <>
-        {rendersections}
+        <> 
+            <div>
+                <h3>{name}</h3>
+                {rendersections}
+            </div>
         <form>
             <h4>Add A Section</h4>
-            <input type="text" name="title" onChange={titleChange}/>
-            <input type="text" name="time"onChange={timeChange}/>
+            <input type="text"  value={title} onChange={titleChange}/>
+            <input type="text" value={time} onChange={timeChange}/>
             <button onClick={sectionSubmit}>+</button>
         </form>
         </>
