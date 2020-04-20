@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {createPres, getPresById} from '../services/api-helper'
 import {createSect} from '../services/section-api-helper'
+import '../css/newpres.css'
+import { createTalk } from '../services/talkpoint-api-helper'
 
 
 function NewPres(){
@@ -11,6 +13,8 @@ function NewPres(){
     const[presID, setPresID] = useState()
     const [title, setTitle] = useState('')
     const [time, setTime] = useState()
+    const [totalTime, setTotalTime] = useState(0)
+    const [point, setPoint] = useState('')
 
     const total = 0;
 
@@ -30,9 +34,14 @@ function NewPres(){
     const timeChange = (e) => {
         setTime(e.target.value)
     }
+    const pointChange = (e) => {
+        setPoint(e.target.value)
+    }
+
     const sectionSubmit = async() => {
         const json = await createSect(presID, {"title": title, "time": time})
         console.log("sections", json)
+        setTotalTime(Number(time) + Number(totalTime))
         setTime('')
         setTitle('')
         getSections()
@@ -43,10 +52,21 @@ function NewPres(){
         console.log("presentation", presentation)
         setSections(presentation.sections)
     }
+
+    const pointSubmit = async(sectId) => {
+        console.log("sectionid", sectId)
+        const json = await createTalk(presID, sectId, {"point": point})
+        console.log("talking-point", json)
+    }
+
     const rendersections = sections.map((section, index)=> {
         if(sections.length>0){
         return(
+            <div>
             <p>{section.title} {section.time}</p>
+            <label className="pointLabel">Add Talking Point: </label> <input type="text" value={point} onChange={pointChange}/>
+            <button onClick={() => pointSubmit(section._id)}>+</button>
+            </div>
         )
         }
     })
@@ -72,7 +92,7 @@ function NewPres(){
             <input type="text" value={time} onChange={timeChange}/>
             <button onClick={sectionSubmit}>+</button>
         </div>
-        <p>Total time: {total}</p>
+        <p>Total time: {totalTime}</p>
         </>
         }
         </>
