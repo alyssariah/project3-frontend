@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
-import { getAllPres} from './services/api-helper'
-//createPres, deletePres, updatePres}
+import { getAllPres} from '../services/api-helper'
+//createPres, deletePres, updatePres
 function Home(){
 
     const [pres, setPres] = useState([])
@@ -16,8 +16,6 @@ function Home(){
         makeAPICall()
       }, [])
 
-
-
     const renderPres = pres.map( (pres, index) => {
         return (
            <div 
@@ -26,15 +24,9 @@ function Home(){
       })
 
 
+return (<div className="presentationsGroup">
 
-  
-
-return (<div className="App">
-
-<h1>Hello CodeSandbox</h1>
-<button onClick={handleCreate}>Create User</button>
-{!isLoading && <ul>{renderUsers}</ul>}
-{/* {isLoading ? <ul>{renderUsers}</ul> : ''} */}
+{!isLoading && {renderPres}}
 
 </div>
 )}
