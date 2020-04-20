@@ -33,6 +33,7 @@ function NewPres(){
         console.log("sections", json)
         setTime('')
         setTitle('')
+        getSections()
     }
 
     const getSections = async() => {
@@ -63,12 +64,12 @@ function NewPres(){
                 <h3>{name}</h3>
                 {rendersections}
             </div>
-        <form>
+        <div>
             <h4>Add A Section</h4>
             <input type="text"  value={title} onChange={titleChange}/>
             <input type="text" value={time} onChange={timeChange}/>
             <button onClick={sectionSubmit}>+</button>
-        </form>
+        </div>
         </>
         }
         </>

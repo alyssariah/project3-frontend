@@ -24,8 +24,8 @@ export const deletePres = async id => {
     return resp.data
 };
 
-export const updatePres = async (id) => {
-    const resp = await api.put(`/pres/${id}`);
+export const updatePres = async (id, body) => {
+    const resp = await api.put(`/pres/${id}`, body);
     return resp.data
 }
 
