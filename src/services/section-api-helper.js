@@ -7,8 +7,8 @@ const api = axios.create({
 //why aren't we adding api in the URL?
 
 //create sections
-export const createSect = async (sectId) => {
-    const resp = await api.post(`/sections/${sectId}`, sectId);
+export const createSect = async (presId, body) => {
+    const resp = await api.post(`/sections/${presId}`, body);
     return resp.data
 }
 
