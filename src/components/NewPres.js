@@ -1,5 +1,5 @@
 import React from 'react'
-import {createPresentation, createSection, createTalkingPoint} from '../services/api-helper'
+import {createPres, createSect, createTalk} from '../services/api-helper'
 
 
 function NewPres(){
