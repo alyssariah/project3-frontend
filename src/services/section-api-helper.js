@@ -4,9 +4,17 @@ const api = axios.create({
     baseURL: "https://alyssa-presentations-timer.herokuapp.com/"
 });
 
-//why aren't we adding api in the URL?
+
 
 //create sections
+
+export const findById = async (sectId)=>{
+    const resp =await api.get(`sections/${sectId}`)
+    return resp.data
+}
+
+
+
 export const createSect = async (presId, body) => {
     const resp = await api.post(`/sections/${presId}`, body);
     return resp.data
