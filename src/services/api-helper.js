@@ -14,8 +14,8 @@ export const getPresById = async (id) => {
     return resp.data
 }
 
-export const createPres = async (pres) => {
-    const resp = await api.post("/pres", pres);
+export const createPres = async (body) => {
+    const resp = await api.post("/pres", body);
     return resp.data
 }
 
