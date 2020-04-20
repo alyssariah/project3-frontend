@@ -54,9 +54,8 @@ function NewPres(){
     }
 
     const pointSubmit = async(sectId) => {
-        console.log("sectionid", sectId)
         const json = await createTalk(presID, sectId, {"point": point})
-        console.log("talking-point", json)
+        setPoint('')
     }
 
     const rendersections = sections.map((section, index)=> {
