@@ -7,7 +7,7 @@ import {Link} from "react-router-dom"
 
 
 
-function NewPres(){
+function NewPres(props){
     const[showForm, setShowForm] = useState(false)
     const[showStart, setShowStart] = useState(true)
     const[sections, setSections] = useState([])
@@ -21,7 +21,8 @@ function NewPres(){
     const nameChange = (e) => {
         setName(e.target.value)
     }
-    const nameSubmit = async() => {
+    const nameSubmit = async(e) => {
+        e.preventDefault()
         const json = await createPres({"name": name})
         console.log("json", json)
         setPresID(json._id)
@@ -35,7 +36,8 @@ function NewPres(){
         setTime(e.target.value)
     }
 
-    const sectionSubmit = async() => {
+    const sectionSubmit = async(e) => {
+        e.preventDefault()
         const json = await createSect(presID, {"title": title, "time": time})
         console.log("sections", json)
         setTotalTime(Number(time) + Number(totalTime))
@@ -63,13 +65,20 @@ function NewPres(){
         }
     })
 
+    const Blastoff = async() => {
+        const presentation = await getPresById(presID)
+        props.clickPresentation(presentation)
+    }
+
     return(
         <div className="newPresMain">
         <h1>Create a New Project</h1>
         {showStart && 
         <div className="addProject">
+            <form onSubmit={nameSubmit}>
             <label>Project Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
-            <button onClick={nameSubmit}>Submit</button>
+            <button>Submit</button>
+            </form>
         </div>
         }
         {showForm && 
@@ -77,12 +86,14 @@ function NewPres(){
             <div className="includeTitle">
                 <h2>{name}</h2>
                 {rendersections}  
-             <h4>Add a section: </h4>   
+             <h4>Add a section: </h4>
+            <form onSubmit={sectionSubmit}>
             <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
             <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
-            <button className="addSection" onClick={sectionSubmit}>+ Add</button>
+            <button className="addSection">+ Add</button>
+            </form>
             <p className="time">Total time: {totalTime}</p>
-            <Link to="/pres"><button className="doneButton">Done!</button></Link>
+            <Link to="/pres"><button className="doneButton" onClick={Blastoff}>Done!</button></Link>
         </div>
         </div>
         }

@@ -8,10 +8,11 @@ function NewSection(props) {
         setValuePoint(e.target.value)
     }
 
-    const pointSubmit = async(sectionInput) => {
-        const json = await createTalk(sectionInput, {"point": valuepoint})
+    const pointSubmit = async(e) => {
+        e.preventDefault()
+        const json = await createTalk(props.section._id, {"point": valuepoint})
         setValuePoint('')
-        props.pointSubmit(sectionInput)
+        props.pointSubmit(props.section._id)
     }
     const renderPoints = props.section.talking_points.map((point, index) => {
         console.log("my points", point)
@@ -25,8 +26,10 @@ function NewSection(props) {
     <div className="section">
         <p>Section {props.index + 1}: {props.section.title} {props.section.time}</p> 
         <ul>{renderPoints}</ul>
+        <form onSubmit= {pointSubmit}>
         <label className="pointLabel">Add Talking Point: </label> <input type="text" value={valuepoint} onChange={pointChange} required="required"/>
-        <button onClick={() => pointSubmit(props.section._id)}>+</button>
+        <button>+</button>
+        </form>
     </div>
   )
 }
