@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './components/theme';
 import { GlobalStyles } from './components/global';
 import Toggle from './components/Toggle';
+import Pres from './components/Pres'
 
 
 import Home from './components/Home';
