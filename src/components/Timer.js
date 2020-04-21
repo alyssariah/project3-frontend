@@ -41,12 +41,19 @@ function Timer() {
         setStatus(2)
     };
 
+    const reset = () => {
+        clearInterval(interv)
+        setStatus(0)
+        setTime({ms:0, s:0, m:0, h:0})
+    };
+    const resume = () => start();
+
     return (
         <div className="main-section">
             <div className="clockWrapper">
                 <div className="timer">
                     <TimerDisplay time={time} />
-                    <TimerButtons status={status} stop={stop} start={start}/>
+                    <TimerButtons status={status} resume={resume} stop={stop} reset={reset} start={start}/>
                 </div>
             </div>
         </div>

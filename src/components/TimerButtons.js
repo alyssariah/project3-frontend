@@ -15,7 +15,16 @@ function TimerButton(props) {
                   <button className="timer-btn timer-btn-red"
                         onClick={props.reset}>Reset</button>
               </div> : ""
-            }   
+            } 
+
+            {(props.status === 2)?
+              <div>
+                  <button className="timer-btn timer-btn-gre"
+                        onClick={props.resume}>Resume</button>
+                  <button className="timer-btn timer-btn-yel"
+                        onClick={props.reset}>Reset</button>
+              </div> : ""
+            }    
             
         </div>
     )
