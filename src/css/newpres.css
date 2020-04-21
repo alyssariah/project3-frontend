@@ -1,3 +1,45 @@
+.newPresMain {
+    margin-top: 8vh;
+}
+.addProject{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+.addProject label{
+    font-size: 20px;
+}
+input {
+    margin: 0 10px;
+}
+.addProject button{
+    font-size: 16px;
+    border: 2px solid black;
+}
+.name {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+}
 .pointLabel {
     font-size: 14px;
+}
+.fullpage {
+    display: flex;
+    justify-content: center;
+}
+.time {
+    text-align: right;
+}
+.includeTitle {
+    display: flex;
+    flex-direction: column;
+}
+.includeTitle h4 {
+    text-align: center;
+}
+.addSection{
+    display: flex;
+    align-items: center;
 }

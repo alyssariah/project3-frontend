@@ -3,6 +3,7 @@ import {createPres, getPresById} from '../services/api-helper'
 import {createSect, findById} from '../services/section-api-helper'
 import NewSection from './NewSection.js'
 import '../css/newpres.css'
+import {Link} from "react-router-dom"
 
 
 
@@ -16,7 +17,6 @@ function NewPres(){
     const [time, setTime] = useState()
     const [totalTime, setTotalTime] = useState(0)
 
-    const total = 0;
 
     const nameChange = (e) => {
         setName(e.target.value)
@@ -55,8 +55,6 @@ function NewPres(){
         setSections(presentation.sections)
     }
 
-
-
     const rendersections = sections.map((section, index)=> {
         if(sections.length>0){
         return(
@@ -66,28 +64,29 @@ function NewPres(){
     })
 
     return(
-        <div className="main">
+        <div className="newPresMain">
         <h1>Create a New Project</h1>
         {showStart && 
         <div className="addProject">
-            <label>Project Name</label> <input type="text" value={name} onChange={nameChange}/>
+            <label>Project Name: </label> <input className="name" type="text" value={name} onChange={nameChange}/>
             <button onClick={nameSubmit}>Submit</button>
         </div>
         }
         {showForm && 
-        <> 
-            <div>
+        <div className="fullpage"> 
+            <div className="includeTitle">
                 <h4>{name}</h4>
                 {rendersections}
-            </div>
-        <div>
+            <div className="addSection">    
             <h4>Add A Section</h4>
             <input type="text"  value={title} onChange={titleChange}/>
             <input type="text" value={time} onChange={timeChange}/>
             <button onClick={sectionSubmit}>+</button>
+            </div>
+            <p className="time">Total time: {totalTime}</p>
+            <Link to="/pres"><button>Done!</button></Link>
         </div>
-        <p>Total time: {totalTime}</p>
-        </>
+        </div>
         }
         </div>
 
