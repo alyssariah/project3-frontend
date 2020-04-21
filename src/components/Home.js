@@ -24,10 +24,10 @@ function Home(props){
       const handleDelete = async (id) => {
         const json = await deletePres(id)
         console.log('handleDelete - json', json)
-        if(json.status === 'success'){
-          const presArr = pres.filter( pres => pres._id !== id)
+        
+          const presArr = pres.filter( trashed => trashed._id !== id)
           setPres(presArr)
-        }
+        
       }
       //1. passes backend delete the id of the presentation clicked
       //2 .filter over the state presentation array that was grabbed
