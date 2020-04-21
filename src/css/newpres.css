@@ -5,13 +5,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    height: 60vh;
+    padding: 0 20px;
 }
 .addProject label{
     font-size: 20px;
 }
 input {
-    margin: 0 10px;
+    margin: 0 5px;
 }
 .addProject button{
     font-size: 16px;
@@ -29,17 +30,37 @@ input {
     display: flex;
     justify-content: center;
 }
+.fullpage h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
 .time {
     text-align: right;
 }
 .includeTitle {
     display: flex;
     flex-direction: column;
+
 }
 .includeTitle h4 {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+}
+.includeTitle a {
     text-align: center;
 }
-.addSection{
-    display: flex;
-    align-items: center;
+button {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 7px 10px;
+}
+.section button{
+    padding: 2px 5px;
+}
+.section {
+    margin-bottom: 30px;
+}
+.addSection {
+    align-self: start;
 }

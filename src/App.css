@@ -10,8 +10,6 @@ header {
   align-items: center;
   padding: 0 20px;
   border-bottom: 2px solid black;
-  position: fixed;
-  top: 0;
   width: 100%;
   background-color:#E2E2E2;
   height: 8vh;

@@ -58,7 +58,7 @@ function NewPres(){
     const rendersections = sections.map((section, index)=> {
         if(sections.length>0){
         return(
-            <NewSection section={section} pointSubmit={pointSubmit}/>
+            <NewSection section={section} pointSubmit={pointSubmit} index={index}/>
         )
         }
     })
@@ -68,23 +68,23 @@ function NewPres(){
         <h1>Create a New Project</h1>
         {showStart && 
         <div className="addProject">
-            <label>Project Name: </label> <input className="name" type="text" value={name} onChange={nameChange}/>
+            <form>
+            <label>Project Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
             <button onClick={nameSubmit}>Submit</button>
+            </form>
         </div>
         }
         {showForm && 
         <div className="fullpage"> 
             <div className="includeTitle">
-                <h4>{name}</h4>
-                {rendersections}
-            <div className="addSection">    
-            <h4>Add A Section</h4>
-            <input type="text"  value={title} onChange={titleChange}/>
-            <input type="text" value={time} onChange={timeChange}/>
-            <button onClick={sectionSubmit}>+</button>
-            </div>
+                <h2>{name}</h2>
+                {rendersections}  
+             <h4>Add a section: </h4>   
+            <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
+            <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
+            <button className="addSection" onClick={sectionSubmit}>+ Add</button>
             <p className="time">Total time: {totalTime}</p>
-            <Link to="/pres"><button>Done!</button></Link>
+            <Link to="/pres"><button className="doneButton">Done!</button></Link>
         </div>
         </div>
         }
