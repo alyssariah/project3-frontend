@@ -1,5 +1,6 @@
 import React from 'react'
 import Points from './Points'
+import '../css/pres.css'
 
 function Pres(props) {
     console.log('Pres-props', props)
@@ -10,10 +11,8 @@ function Pres(props) {
     const renderSections = props.presentation.sections.map((section, index) => {
         return (
             <div>
-                <h3>{section.title} {section.time}</h3>
-                <ul>
-                    <Points points={section.talking_points} />
-                </ul>
+                <h3>Section {index +1}: {section.title} {section.time}</h3>
+                <Points points={section.talking_points} />
             </div>
         )
     })
@@ -21,7 +20,6 @@ function Pres(props) {
             
     return (
         <div className="presMain">
-            <h1>Pres Page</h1>
             <h2>Title: {props.presentation.name}</h2>
             {renderSections}
         </div>
