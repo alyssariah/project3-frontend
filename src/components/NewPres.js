@@ -87,7 +87,7 @@ function NewPres(props){
                 <h2>{name}</h2>
                 {rendersections}  
              <h4>Add a section: </h4>
-            <form onSubmit={sectionSubmit}>
+            <form className="sectionForm" onSubmit={sectionSubmit}>
             <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
             <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
             <button className="addSection">+ Add</button>

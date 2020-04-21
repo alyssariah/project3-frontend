@@ -20,11 +20,11 @@ function Pres(props) {
          
             
     return (
-        <>
+        <div className="presMain">
             <h1>Pres Page</h1>
             <h2>Title: {props.presentation.name}</h2>
             {renderSections}
-        </>
+        </div>
     )
 }
 
