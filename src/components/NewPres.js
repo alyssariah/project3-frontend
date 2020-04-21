@@ -46,32 +46,34 @@ function NewPres(){
         setTotalTime(Number(time) + Number(totalTime))
         setTime('')
         setTitle('')
-        getSections(json._id)
+        getSections()
     }
 
-    const getSections = async(id) => {
-        const section = await findById(id)
-        console.log("presentation", section)
-        setSections(section)
+    const getSections = async() => {
+        const presentation = await getPresById(presID)
+        console.log("presentation", presentation)
+        setSections(presentation.sections)
     }
 
     const pointSubmit = async(sectionInput) => {
         const json = await createTalk(sectionInput, {"point": point})
+        console.log("createPoint", json)
         setPoint('')
-        setSectId(sectionInput)
-        getPoints(sectionInput)
+        // setSectId(sectionInput)
+        // getPoints(sectionInput)
     }
 
-    const getPoints = async(id) => {
-        const section = await findById(id)
-        console.log('section', section)
-        setPointsArr(section.talking_points)
-    }
+    // const getPoints = async(id) => {
+    //     const section = await findById(id)
+    //     console.log('section', section)
+    //     setPointsArr(section.talking_points)
+    // }
 
 
     const rendersections = sections.map((section, index)=> {
-        const renderPoints = pointsArr.map((point, index) => {
-            if(pointsArr.length > 0){
+        const renderPoints = section.talking_points.map((point, index) => {
+            console.log("my points", point)
+            if(section.talking_points.length > 0){
                 return(
                     <li>{point.point}</li>
                 )
