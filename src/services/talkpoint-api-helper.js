@@ -17,3 +17,9 @@ export const deleteTalk = async (presId, sectId) => {
     const resp = await api.post(`/talkpoint/${presId}/${sectId}`, body);
     return resp.data
 }
+
+//update talk point
+export const updateTalk = async (presId, sectId, body) => {
+    const resp = await api.put(`/talkpoint/${presId}/${sectId}`, body);
+    return resp.data
+}
