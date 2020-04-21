@@ -13,8 +13,21 @@
 }
 input {
     margin: 0 5px;
+    font-size: 12px;
+    width: 30vw;
 }
-.addProject button{
+.sectionForm input {
+    width: 70vw;
+    font-size: 16px;
+}
+.addProject form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.addProject form button{
+    margin: 30px;
     font-size: 16px;
     border: 2px solid black;
 }
@@ -40,12 +53,12 @@ input {
 .includeTitle {
     display: flex;
     flex-direction: column;
-
+    width: 70vw;
 }
 .includeTitle h4 {
     text-align: left;
     margin: 0;
-    font-size: 16px;
+    font-size: 18px;
 }
 .includeTitle a {
     text-align: center;
