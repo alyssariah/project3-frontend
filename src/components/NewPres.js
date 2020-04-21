@@ -3,6 +3,7 @@ import {createPres, getPresById} from '../services/api-helper'
 import {createSect, findById} from '../services/section-api-helper'
 import NewSection from './NewSection.js'
 import '../css/newpres.css'
+import {Link} from "react-router-dom"
 
 
 
@@ -16,7 +17,6 @@ function NewPres(){
     const [time, setTime] = useState()
     const [totalTime, setTotalTime] = useState(0)
 
-    const total = 0;
 
     const nameChange = (e) => {
         setName(e.target.value)
@@ -55,39 +55,38 @@ function NewPres(){
         setSections(presentation.sections)
     }
 
-
-
     const rendersections = sections.map((section, index)=> {
         if(sections.length>0){
         return(
-            <NewSection section={section} pointSubmit={pointSubmit}/>
+            <NewSection section={section} pointSubmit={pointSubmit} index={index}/>
         )
         }
     })
 
     return(
-        <div className="main">
+        <div className="newPresMain">
         <h1>Create a New Project</h1>
         {showStart && 
         <div className="addProject">
-            <label>Project Name</label> <input type="text" value={name} onChange={nameChange}/>
+            <form>
+            <label>Project Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
             <button onClick={nameSubmit}>Submit</button>
+            </form>
         </div>
         }
         {showForm && 
-        <> 
-            <div>
-                <h4>{name}</h4>
-                {rendersections}
-            </div>
-        <div>
-            <h4>Add A Section</h4>
-            <input type="text"  value={title} onChange={titleChange}/>
-            <input type="text" value={time} onChange={timeChange}/>
-            <button onClick={sectionSubmit}>+</button>
+        <div className="fullpage"> 
+            <div className="includeTitle">
+                <h2>{name}</h2>
+                {rendersections}  
+             <h4>Add a section: </h4>   
+            <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
+            <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
+            <button className="addSection" onClick={sectionSubmit}>+ Add</button>
+            <p className="time">Total time: {totalTime}</p>
+            <Link to="/pres"><button className="doneButton">Done!</button></Link>
         </div>
-        <p>Total time: {totalTime}</p>
-        </>
+        </div>
         }
         </div>
 

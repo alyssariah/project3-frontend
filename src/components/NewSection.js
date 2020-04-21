@@ -22,10 +22,10 @@ function NewSection(props) {
         }
     })
   return(
-    <div>
-        <p>{props.section.title} {props.section.time}</p> 
+    <div className="section">
+        <p>Section {props.index + 1}: {props.section.title} {props.section.time}</p> 
         <ul>{renderPoints}</ul>
-        <label className="pointLabel">Add Talking Point: </label> <input type="text" value={valuepoint} onChange={pointChange}/>
+        <label className="pointLabel">Add Talking Point: </label> <input type="text" value={valuepoint} onChange={pointChange} required="required"/>
         <button onClick={() => pointSubmit(props.section._id)}>+</button>
     </div>
   )
