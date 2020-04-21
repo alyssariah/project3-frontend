@@ -15,7 +15,6 @@ function NewSection(props) {
         props.pointSubmit(props.section._id)
     }
     const renderPoints = props.section.talking_points.map((point, index) => {
-        console.log("my points", point)
         if(props.section.talking_points.length > 0){
             return(
                 <li key={index}>{point.point}</li>

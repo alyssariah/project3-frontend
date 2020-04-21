@@ -48,6 +48,13 @@ i {
 .main {
   margin-top : 8vh;
 }
+input {
+  border-radius: 30px;
+  padding: 0 10px;
+}
+button {
+  border-radius: 20px;
+}
 
 
 
