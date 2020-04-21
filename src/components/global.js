@@ -41,6 +41,7 @@ export const GlobalStyles = createGlobalStyle`
 
   i {
     color: ${({ theme }) => theme.highlight};
+    cursor: pointer;
   }
 
 
