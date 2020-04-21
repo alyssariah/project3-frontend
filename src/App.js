@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,  useContext} from 'react';
 
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './components/theme';
@@ -14,9 +14,12 @@ import NewPres from './components/NewPres';
 import "./App.css"
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
 
+
+
 function App() {
   const [theme, setTheme] = useState('light');
   const[showInstructions, setShowInstructions] = useState(false)
+  const [presentation, setClickPresentation] = useState()
   const toggleTheme = () => {
     // if the theme is not light, then set it to dark
     if (theme === 'light') {
@@ -26,10 +29,16 @@ function App() {
       setTheme('light');
     }
   }
+  
+  
+  const clickPresentation =( pres)=>{
+    setClickPresentation(pres)
+  }
 
   return (
     
     <>
+
     <header><Link to ="/"><h1>Presentation Timer</h1></Link><i onClick={() => setShowInstructions(!showInstructions)} className="fas fa-info-circle"></i></header>
     {showInstructions && 
       <div className="instructions">
@@ -44,8 +53,8 @@ function App() {
         </>
     </ThemeProvider>
     <Switch>
-	      <Route exact path="/" component={Home}/>
-	      {/* <Route exact path="/pres" component={Pres}/> */}
+	      <Route exact path="/" render = {() => < Home clickPresentation={clickPresentation}/>}/>
+	      <Route exact path="/pres" render={()=> <Pres presentation = {presentation}/>}/> 
         <Route exact path="/new" component={NewPres}/>
         {/* <Route exact path="/update" component={UpdatePres}/> */}
        <Redirect to="/"/>
