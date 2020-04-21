@@ -72,11 +72,11 @@ function NewPres(props){
 
     return(
         <div className="newPresMain">
-        <h1>Create a New Project</h1>
+        <h1>Create a New Presentation</h1>
         {showStart && 
         <div className="addProject">
             <form onSubmit={nameSubmit}>
-            <label>Project Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
+            <label>Presentation Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
             <button>Submit</button>
             </form>
         </div>
