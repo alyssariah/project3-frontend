@@ -6,7 +6,7 @@ import styles from './Toggle.styled.js';
 const Toggle = ({ theme, toggleTheme }) => {
   const isLight = theme === 'light';
   return (
-    <button onClick={toggleTheme}>
+    <button className="togglebutton" onClick={toggleTheme}>
         Toggle
     </button>
   );
