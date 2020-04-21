@@ -68,10 +68,8 @@ function NewPres(){
         <h1>Create a New Project</h1>
         {showStart && 
         <div className="addProject">
-            <form>
             <label>Project Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
             <button onClick={nameSubmit}>Submit</button>
-            </form>
         </div>
         }
         {showForm && 
