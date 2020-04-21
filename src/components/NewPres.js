@@ -46,37 +46,37 @@ function NewPres(){
         setTotalTime(Number(time) + Number(totalTime))
         setTime('')
         setTitle('')
-        getSections()
+        getSections(json._id)
     }
 
-    const getSections = async() => {
-        const presentation = await getPresById(presID)
-        console.log("presentation", presentation)
-        setSections(presentation.sections)
+    const getSections = async(id) => {
+        const section = await findById(id)
+        console.log("presentation", section)
+        setSections(section)
     }
 
     const pointSubmit = async(sectionInput) => {
-        const json = await createTalk(presID, sectionInput, {"point": point})
+        const json = await createTalk(sectionInput, {"point": point})
         setPoint('')
         setSectId(sectionInput)
-        getPoints()
+        getPoints(sectionInput)
     }
 
-    const getPoints = async() => {
-        const section = await findById(sectId)
+    const getPoints = async(id) => {
+        const section = await findById(id)
         console.log('section', section)
         setPointsArr(section.talking_points)
     }
 
-    const renderPoints = pointsArr.map((point, index) => {
-        if(pointsArr.length > 0){
-            return(
-                <li>{point.point}</li>
-            )
-        }
-    })
 
     const rendersections = sections.map((section, index)=> {
+        const renderPoints = pointsArr.map((point, index) => {
+            if(pointsArr.length > 0){
+                return(
+                    <li>{point.point}</li>
+                )
+            }
+        })
         if(sections.length>0){
         return(
             <div>
@@ -101,7 +101,7 @@ function NewPres(){
         {showForm && 
         <> 
             <div>
-                <h3>{name}</h3>
+                <h4>{name}</h4>
                 {rendersections}
             </div>
         <div>
