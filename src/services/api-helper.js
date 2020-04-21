@@ -30,4 +30,8 @@ export const updatePres = async (id, body) => {
 }
 
 
-
+// router.get('/', presController.getAll)
+// router.get('/:id', presController.getById)
+// router.post('/', presController.create)
+// router.put('/:id', presController.update)
+// router.delete('/:id', presController.remove)
