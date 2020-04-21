@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import {createPres, getPresById} from '../services/api-helper'
 import {createSect, findById} from '../services/section-api-helper'
+import NewSection from './NewSection.js'
 import '../css/newpres.css'
-import { createTalk } from '../services/talkpoint-api-helper'
+
 
 
 function NewPres(){
@@ -14,9 +15,6 @@ function NewPres(){
     const [title, setTitle] = useState('')
     const [time, setTime] = useState()
     const [totalTime, setTotalTime] = useState(0)
-    const [point, setPoint] = useState('')
-    const [sectId, setSectId] = useState()
-    const [pointsArr, setPointsArr] = useState([])
 
     const total = 0;
 
@@ -36,9 +34,6 @@ function NewPres(){
     const timeChange = (e) => {
         setTime(e.target.value)
     }
-    const pointChange = (e) => {
-        setPoint(e.target.value)
-    }
 
     const sectionSubmit = async() => {
         const json = await createSect(presID, {"title": title, "time": time})
@@ -55,38 +50,17 @@ function NewPres(){
         setSections(presentation.sections)
     }
 
-    const pointSubmit = async(sectionInput) => {
-        const json = await createTalk(sectionInput, {"point": point})
-        console.log("createPoint", json)
-        setPoint('')
-        // setSectId(sectionInput)
-        // getPoints(sectionInput)
+    const pointSubmit = async() => {
+        const presentation = await getPresById(presID)
+        setSections(presentation.sections)
     }
 
-    // const getPoints = async(id) => {
-    //     const section = await findById(id)
-    //     console.log('section', section)
-    //     setPointsArr(section.talking_points)
-    // }
 
 
     const rendersections = sections.map((section, index)=> {
-        const renderPoints = section.talking_points.map((point, index) => {
-            console.log("my points", point)
-            if(section.talking_points.length > 0){
-                return(
-                    <li>{point.point}</li>
-                )
-            }
-        })
         if(sections.length>0){
         return(
-            <div>
-            <p>{section.title} {section.time}</p>
-            <ul>{renderPoints}</ul>
-            <label className="pointLabel">Add Talking Point: </label> <input type="text" value={point} onChange={pointChange}/>
-            <button onClick={() => pointSubmit(section._id)}>+</button>
-            </div>
+            <NewSection section={section} pointSubmit={pointSubmit}/>
         )
         }
     })
