@@ -4,8 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './components/theme';
 import { GlobalStyles } from './components/global';
 import Toggle from './components/Toggle';
-import Pres from './components/Pres'
-
+import Pres from './components/Pres';
 
 import Home from './components/Home';
 // import Pres from './components/Pres';
@@ -50,7 +49,7 @@ function App() {
         <GlobalStyles />
         {/* <button onClick={toggleTheme}>Toggle theme</button> */}
         <Toggle theme={theme} toggleTheme={toggleTheme} />
-        {/* <h1>It's a {theme === 'light' ? 'light theme' : 'dark theme'}!</h1> */}
+       {/* <h1>It's a {theme === 'light' ? 'light theme' : 'dark theme'}!</h1> */}
         </>
     </ThemeProvider>
     <Switch>
