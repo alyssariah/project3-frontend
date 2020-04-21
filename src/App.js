@@ -54,7 +54,7 @@ function App() {
     </ThemeProvider>
     <Switch>
 	      <Route exact path="/" render = {() => < Home clickPresentation={clickPresentation}/>}/>
-	      <Route exact path="/pres" render={()=> <Pres presentation = {presentation}/>}/> 
+	      {/* <Route exact path="/pres" render={()=> <Pres presentation = {presentation}/>}/>  */}
         <Route exact path="/new" component={NewPres}/>
         {/* <Route exact path="/update" component={UpdatePres}/> */}
        <Redirect to="/"/>
