@@ -16,6 +16,7 @@ import { Link, Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
   const [theme, setTheme] = useState('light');
+  const[showInstructions, setShowInstructions] = useState(false)
   const toggleTheme = () => {
     // if the theme is not light, then set it to dark
     if (theme === 'light') {
@@ -29,13 +30,17 @@ function App() {
   return (
     
     <>
-    <header><Link to ="/"><h1>Presentation Timer</h1></Link><div>i</div></header>
+    <header><Link to ="/"><h1>Presentation Timer</h1></Link><i onClick={() => setShowInstructions(!showInstructions)} className="fas fa-info-circle"></i></header>
+    {showInstructions && 
+      <div className="instructions">
+        <h3>Instructions</h3>
+      </div>}
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> 
          <>
         <GlobalStyles />
         {/* <button onClick={toggleTheme}>Toggle theme</button> */}
         <Toggle theme={theme} toggleTheme={toggleTheme} />
-        <h1>It's a {theme === 'light' ? 'light theme' : 'dark theme'}!</h1>
+        {/* <h1>It's a {theme === 'light' ? 'light theme' : 'dark theme'}!</h1> */}
         </>
     </ThemeProvider>
     <Switch>

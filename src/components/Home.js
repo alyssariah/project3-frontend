@@ -19,16 +19,16 @@ function Home(){
 
     const renderPres = pres.map( (pres, index) => {
         return (
-           <h2 
-            key={index} className="presList">{pres.name}
-          </h2>)
+          <div key={index} className="presList">
+           <h2>{pres.name}</h2>
+          </div> 
+          )
       })
 
 
-return (<div className="presentationsGroup">
-
-{!isLoading && <div>{renderPres}</div>}
-
-</div>
+  return (
+    <div className="main">
+      {!isLoading && <div className="presentationsGroup">{renderPres}</div>}
+    </div>
 )}
 export default Home

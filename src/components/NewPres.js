@@ -90,7 +90,7 @@ function NewPres(){
     })
 
     return(
-        <>
+        <div className="main">
         <h1>Create a New Project</h1>
         {showStart && 
         <div className="addProject">
@@ -113,7 +113,7 @@ function NewPres(){
         <p>Total time: {totalTime}</p>
         </>
         }
-        </>
+        </div>
 
     )
 }
