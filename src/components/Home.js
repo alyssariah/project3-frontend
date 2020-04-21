@@ -28,9 +28,11 @@ function Home(props){
 
     const renderPres = pres.map( (pres, index) => {
         return (
+          <Link to ="/pres">
           <div key={index} className="presList" onClick ={()=>BlastOff(pres)}>
            <h2>{pres.name}</h2>
           </div> 
+          </Link>
           )
       })
       
