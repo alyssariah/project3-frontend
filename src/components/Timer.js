@@ -51,18 +51,27 @@ function Timer(props) {
         setTime({ms:0, s:0, m:0, h:0})
     };
     const resume = () => start();
-    
-    if(props.currentIndex == 0){
-        if(props.timeArr[1] == time.s)
-        console.log("you are behind")
+
+    let changeColor = false
+
+    for(let i=0; i< props.length; i++){
+        if(props.currentIndex == i){
+            if(props.timeArr[i+1]> time.m){
+                changeColor = false
+            }
+            else if(props.timeArr[i+1] <time.m){
+                changeColor=true
+            } 
+        }
     }
+  
   
 
     return (
         <div className="main-section">
             <div className="clockWrapper">
                 <div className="timer">
-                    <TimerDisplay time={time} />
+                    <TimerDisplay changeColor= {changeColor} time={time} />
                     <TimerButtons status={status} resume={resume} stop={stop} reset={reset} start={start}/>
                 </div>
             </div>
