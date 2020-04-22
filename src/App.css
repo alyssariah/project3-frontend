@@ -11,7 +11,7 @@ header {
   padding: 0 20px;
   width: 100%;
   background-color:#E2E2E2;
-  height: 8vh;
+  height: 10vh;
   z-index: 2;
   border-bottom: 1px solid gray;
 }
@@ -68,6 +68,8 @@ button {
 main {
   border-radius: 20px;
 }
+@media(min-width: 768px){
 
+}
 
 
