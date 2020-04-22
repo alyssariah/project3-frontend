@@ -12,6 +12,8 @@ function Timer(props) {
     // 1 = started
     // 2 = pause
 
+    let timeArr = [0]
+
     useEffect(()=>{
         start()
     },[])
@@ -58,6 +60,11 @@ function Timer(props) {
     }
 
     const renderslides = props.presentation.sections.map((section, index)=> {
+        // if((section.time + timeArr[index]) === time.s){
+           
+        // }
+        let number = timeArr[index] + Number(section.time)
+        timeArr.push(number)
         const talkingpoints = section.talking_points.map((point, index)=> {
             return(
                 <li key={index}>{point.point}</li>
@@ -82,8 +89,8 @@ function Timer(props) {
             <div className="slides">
                 {renderslides[currentIndex]}
                 <div className="controlSlideButtons">
-                <button onClick= {() => setCurrentIndex(currentIndex -1)}>Previous</button>
-                <button onClick= {() => setCurrentIndex(currentIndex + 1)}>Next</button>
+                    <i onClick= {() => setCurrentIndex(currentIndex -1)}class="fas fa-chevron-left"></i>
+                    <i onClick= {() => setCurrentIndex(currentIndex + 1)}class="fas fa-chevron-right"></i>
                 </div>
             </div>
         </div>
