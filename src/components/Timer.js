@@ -1,15 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import TimerDisplay from './TimerDisplay'
 import TimerButtons from './TimerButtons'
 import '../css/timer.css'
 
-function Timer() {
+function Timer(props) {
     const [time, setTime] = useState({ms:0, s:0, m:0, h:0})
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
     // 0 = not started
     // 1 = started
     // 2 = pause
+
+    useEffect(()=>{
+        start()
+    },[])
 
     const start = () => {
         run();
@@ -47,6 +51,12 @@ function Timer() {
         setTime({ms:0, s:0, m:0, h:0})
     };
     const resume = () => start();
+    
+    if(props.currentIndex == 0){
+        if(props.timeArr[1] == time.s)
+        console.log("you are behind")
+    }
+  
 
     return (
         <div className="main-section">
