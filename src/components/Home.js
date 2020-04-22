@@ -53,13 +53,13 @@ function Home(props){
 
     const renderPres = pres.map( (pres, index) => {
         return (
-          <div key={index} className="presList">
+          <main key={index} className="presList">
            <Link to ="/pres">
            <h2 onClick ={()=>BlastOff(pres)} >{pres.name}</h2>
            </Link>
            {showButt &&
            <i onClick={() =>handleDelete(pres._id)} class="far fa-trash-alt"></i>}
-          </div> 
+          </main> 
           )
       })
       

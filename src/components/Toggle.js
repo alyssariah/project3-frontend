@@ -6,8 +6,6 @@ import { func, string } from 'prop-types';
 export default function Toggle({ theme, toggleTheme }){
   const isLight = theme === 'light';
   let button;
-  console.log("theme", theme)
-  console.log("isLight", isLight)
   if (theme === 'light')
     { button = (
       <button className="togglebutton" onClick={toggleTheme}>
