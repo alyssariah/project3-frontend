@@ -1,15 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import TimerDisplay from './TimerDisplay'
 import TimerButtons from './TimerButtons'
-import '../css/timer.css'
 
-function Timer() {
+function Timer(props) {
     const [time, setTime] = useState({ms:0, s:0, m:0, h:0})
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
     // 0 = not started
     // 1 = started
     // 2 = pause
+
+    useEffect(()=>{
+        start()
+    },[])
 
     const start = () => {
         run();
@@ -48,11 +51,26 @@ function Timer() {
     };
     const resume = () => start();
 
+    let changeColor = false
+
+    for(let i=0; i< props.length; i++){
+        if(props.currentIndex == i){
+            if(props.timeArr[i+1]> time.m){
+                changeColor = false
+            }
+            else if(props.timeArr[i+1] <= time.m){
+                changeColor=true
+            } 
+        }
+    }
+  
+  
+
     return (
         <div className="main-section">
             <div className="clockWrapper">
                 <div className="timer">
-                    <TimerDisplay time={time} />
+                    <TimerDisplay changeColor= {changeColor} time={time} />
                     <TimerButtons status={status} resume={resume} stop={stop} reset={reset} start={start}/>
                 </div>
             </div>

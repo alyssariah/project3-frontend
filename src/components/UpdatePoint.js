@@ -4,11 +4,8 @@ import {deleteTalk, createTalk, updateTalk} from '../services/talkpoint-api-help
 
         //I NEED TO SEND IN PROPS WHICH WILL BE THE FROM THE INDIVIDUAL SECTION**
 function UpdatePoint(props){
-
-  
+const[updatePoint, setUpdatePoint] = useState("")
 const [pointBullet, setPointBullet] =useState(props.points)
-// const [isLoading, setIsloading] = useState(true)
-//const [singleTalk, setsinglePoint] = useState(props.point.points)//this is a single point
 const [subFormReset, setSubFormReset] = useState('')//sub form reset
 const[updatePoint, setUpdatePoint] = useState('')
 
@@ -58,9 +55,7 @@ console.log("this is update on points page ", updatePoint)
         //this is creating a new array and reassining the props as such
   }
 
-//<button onClick={()=>handleEdit()}>update</button>
 
-  //RENDER TALKPOINTS 
 
   //each one gets a delete and update
   //change button to icons later]
@@ -79,11 +74,11 @@ console.log("this is update on points page ", updatePoint)
       </span>)
   })
 
-
     return(
         <div className ="changeTalkpoints">
             <h1>{listOfTalkingPoints}</h1>
     </div>
+    //add points here
 
 
 

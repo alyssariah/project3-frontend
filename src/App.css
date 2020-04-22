@@ -35,6 +35,7 @@ i {
 .togglebutton {
   position: absolute;
   top: 10vh;
+  margin: 2px;
 }
 .instructions {
   position: absolute;

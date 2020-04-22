@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+.main-section {
+    text-align: center;
+}
+.slides {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.slides ul li {
+    margin: 10px;
+    font-size: 18px;
+}
+.slides h1 {
+    text-align: left;
+    font-size: 30px;
+}
+.controlSlideButtons{
+    display: flex;
+    width: 95vw;
+    justify-content: space-between;
+    position: absolute;
+}
+.fa-chevron-left, .fa-chevron-right {
+    font-size: 50px;
+}
+.clockDiv {
+    margin-top: 30px;
+}
+.clock{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+}
+.controlButtons button {
+    margin: 8px;
+    width: 20vw;
+}

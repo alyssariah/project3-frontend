@@ -2,26 +2,26 @@ import React from 'react'
 
 function TimerButton(props) {
     return (
-        <div>
+        <div className="controlButtons">
             {(props.status === 0)?
-              <button className="timer-btn timer-btn-gre"
+              <button
               onClick={props.start}>Start</button> : ""
             }
 
             {(props.status === 1)?
               <div>
-                  <button className="timer-btn timer-btn-red"
+                  <button 
                         onClick={props.stop}>Stop</button>
-                  <button className="timer-btn timer-btn-red"
+                  <button 
                         onClick={props.reset}>Reset</button>
               </div> : ""
             } 
 
             {(props.status === 2)?
               <div>
-                  <button className="timer-btn timer-btn-gre"
+                  <button 
                         onClick={props.resume}>Resume</button>
-                  <button className="timer-btn timer-btn-yel"
+                  <button 
                         onClick={props.reset}>Reset</button>
               </div> : ""
             }    
