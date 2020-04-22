@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import TimerDisplay from './TimerDisplay'
 import TimerButtons from './TimerButtons'
 import '../css/timer.css'
@@ -11,6 +11,10 @@ function Timer(props) {
     // 0 = not started
     // 1 = started
     // 2 = pause
+
+    useEffect(()=>{
+        start()
+    },[])
 
     const start = () => {
         run();
