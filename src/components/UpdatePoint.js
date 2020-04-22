@@ -4,28 +4,33 @@ import {deleteTalk, createTalk, updateTalk} from '../services/talkpoint-api-help
 
         //I NEED TO SEND IN PROPS WHICH WILL BE THE FROM THE INDIVIDUAL SECTION**
 function UpdatePoint(props){
-const[updatePoint, setUpdatePoint] = useState("")
+
   
 const [pointBullet, setPointBullet] =useState(props.points)
 // const [isLoading, setIsloading] = useState(true)
 //const [singleTalk, setsinglePoint] = useState(props.point.points)//this is a single point
 const [subFormReset, setSubFormReset] = useState('')//sub form reset
+const[updatePoint, setUpdatePoint] = useState('')
 
+const updatingPoint =(e)=>{
+    setUpdatePoint(e.target.value)
+}
 
 //ITS GETTING ARRAY OF OBJECT TALKPOINTS FROM THE SECT CLICKED
 console.log("props.points from updatePoint", props.points)
-console.log("props.points.point from updatePoint", props.points[0].point)
+// console.log("props.points.point from updatePoint", props.points[0].point)
 console.log('this is state', pointBullet)
+console.log("this is update on points page ", updatePoint)
 //renders and array of objects
 
 
-    useEffect((e) => {
-        const makeAPICall = async () => {
-          const resp =  await deleteTalk()
-          setPointBullet(resp)
-        }
-        makeAPICall()
-      }, [])
+    // useEffect(() => {
+    //     const makeAPICall = async () => {
+    //       const resp =  await deleteTalk()
+    //       setPointBullet(resp)
+    //     }
+    //     makeAPICall()
+    //   }, [])
 
     
 
@@ -37,11 +42,11 @@ console.log('this is state', pointBullet)
     // }
 
 
-
+//THEY HAVE GET ALL SHOUL DI JUST RENDER PROPS?
    const handleEdit = async(e) => {
     e.preventDefault()
     const json = await updateTalk(props.points._id, {"point": updatePoint})
-
+    //only difference for both is the response of the get all
 }
 
     const handleDelete = async (id)=> {
@@ -53,7 +58,7 @@ console.log('this is state', pointBullet)
         //this is creating a new array and reassining the props as such
   }
 
-//<button onClick={()=>handleEdit}>update</button>
+//<button onClick={()=>handleEdit()}>update</button>
 
   //RENDER TALKPOINTS 
 
@@ -66,6 +71,10 @@ console.log('this is state', pointBullet)
      <span key={index}>    
       <p>Talking Point: {individualPoint.point}</p> 
   <button onClick={()=>handleDelete(individualPoint._id)}>Delete {individualPoint._id}</button>
+  <form onSubmit={handleEdit}>
+      <input type="text" value ={updatePoint} onChange ={updatingPoint}/>
+      <button>Update</button>
+      </form>
       
       </span>)
   })
