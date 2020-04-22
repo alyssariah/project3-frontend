@@ -17,18 +17,21 @@ input {
     width: 30vw;
 }
 .sectionForm input {
-    width: 70vw;
+    width: 55vw;
     font-size: 16px;
     height: 5vh;
 }
 .addProject form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+}
+.addProject form input {
+    margin: 30px;
+    width: 70vw;
 }
 .addProject form button{
-    margin: 30px;
     font-size: 16px;
     border: 2px solid black;
 }
