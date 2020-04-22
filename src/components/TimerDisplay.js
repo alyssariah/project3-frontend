@@ -1,6 +1,7 @@
 import React from 'react'
 
 function TimerDisplay(props) {
+    
     const h = () => {
         if(props.time.h === 0) {
             return '';

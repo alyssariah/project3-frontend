@@ -6,6 +6,7 @@ import { GlobalStyles } from './components/global';
 import Toggle from './components/Toggle';
 import Pres from './components/Pres'
 import Timer from './components/Timer'
+import StartPres from './components/StartPres'
 
 import Home from './components/Home';
 import NewPres from './components/NewPres';
@@ -56,7 +57,7 @@ function App() {
 	      <Route exact path="/" render = {() => < Home clickPresentation={clickPresentation}/>}/>
 	      <Route exact path="/pres" render={()=> <Pres presentation = {presentation} clickPresentation = {clickPresentation}/>}/> 
         <Route exact path="/new" render={()=> <NewPres clickPresentation = {clickPresentation}/>}/>
-        <Route exact path="/timer" render={()=> <Timer presentation = {presentation} />} />
+        <Route exact path="/timer" render={()=> <StartPres presentation = {presentation} />} />
         <Route exact path="/update" render={()=> <UpdatePres presentation = {presentation} />}/>
        <Redirect to="/"/>
     </Switch>
