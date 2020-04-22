@@ -45,13 +45,34 @@ function UpdatePres(props) {
             
     return (
         <div className="updatePresMain">
-            <h2><i onClick= {()=>setShowEdit(!showEdit)} class="far fa-edit"></i>{freshName}</h2>
+            <h2><i onClick= {()=>setShowEdit(!showEdit)} class="far fa-edit"></i>
             {
-                showEdit &&<form className="nameForm" onSubmit={presNameSubmit}>
-                <p><label>Presentation Name: </label><input type="text" value={name} onChange={nameChange} required="required"/></p>
-                <button>update</button>
+                 !showEdit
+                 &&
+                 <h2>{freshName}</h2>
+
+             }
+             </h2>
+           
+            
+            
+            {
+                showEdit 
+                    &&
+                <form className="nameForm" onSubmit={presNameSubmit}>
+                        <p>
+                            <label>Presentation Name: </label>
+                            <input
+                                 type="text" 
+                                 value={name} 
+                                 onChange={nameChange} 
+                                 required="required"
+                                 />
+                        </p>
+                    <button>update</button>
                 </form>
              }
+            
         {renderSections}
             <p className="time">Total time: {totalTime}</p>
         </div>
