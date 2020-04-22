@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import Points from './Points'
 import '../css/pres.css'
-import {Link} from "react-router-dom"
+import {Link, Redirect} from "react-router-dom"
 
 function Pres(props) {
     let totalTime = 0
     console.log('Pres-props', props)
     if(!props.presentation){
-        return <></>
+        return <Redirect to="/"/>
     }
 
     const renderSections = props.presentation.sections.map((section, index) => {

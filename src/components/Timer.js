@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import TimerDisplay from './TimerDisplay'
 import TimerButtons from './TimerButtons'
-import '../css/timer.css'
 
 function Timer(props) {
     const [time, setTime] = useState({ms:0, s:0, m:0, h:0})
@@ -59,7 +58,7 @@ function Timer(props) {
             if(props.timeArr[i+1]> time.m){
                 changeColor = false
             }
-            else if(props.timeArr[i+1] <time.m){
+            else if(props.timeArr[i+1] <= time.m){
                 changeColor=true
             } 
         }

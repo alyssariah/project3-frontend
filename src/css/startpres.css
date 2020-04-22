@@ -18,9 +18,12 @@
     width: 20vw;
     height: 6vh
 }
-.controlSlideButtons{
+/* .controlSlideButtons{
     margin: 0 20px;
     width: 100vw;
     display: flex;
     justify-content: space-between;
+} */
+.fas .fa-chevron-left {
+    marigin: 10px;
 }
