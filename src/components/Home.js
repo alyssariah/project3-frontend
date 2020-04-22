@@ -53,13 +53,13 @@ function Home(props){
 
     const renderPres = pres.map( (pres, index) => {
         return (
-          <Link to ="/pres">
-          <div key={index} className="presList" onClick ={()=>BlastOff(pres)}>
-           <h2>{pres.name}</h2>
+          <div key={index} className="presList">
+           <Link to ="/pres">
+           <h2 onClick ={()=>BlastOff(pres)} >{pres.name}</h2>
+           </Link>
            {showButt &&
-           <button onClick={() =>handleDelete(pres._id)}>delete</button>}
+           <i onClick={() =>handleDelete(pres._id)} class="far fa-trash-alt"></i>}
           </div> 
-          </Link>
           )
       })
       
@@ -67,12 +67,11 @@ function Home(props){
   return (
 
     <div className="main">
-      {!isLoading && <div className="presentationsGroup">{renderPres}</div>}
-      <button><Link to ="/new">New Presentation</Link></button>
+      <div className="buttons">
+      <button><Link to ="/new">Create Presentation</Link></button>
       <button onClick={buttFunction}>Delete Presentation</button>
-      
-      
-      
+      </div>
+      {!isLoading && <div className="presentationsGroup">{renderPres}</div>}
     </div>
     
 )}

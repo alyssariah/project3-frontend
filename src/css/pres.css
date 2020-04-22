@@ -1,0 +1,23 @@
+.presMain, .updatePresMain {
+    margin: 0 30px;
+}
+h2 {
+    text-align: center;
+}
+.presMain h3 {
+    display: flex;
+    justify-content: space-between;
+}
+.presMain .fa-edit{
+    position: absolute;
+    top: 11vh;
+    right: 8px;
+}
+.sectionPlace {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .fa-edit {
+    position: relative;
+} */
