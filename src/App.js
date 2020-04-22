@@ -4,7 +4,8 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './components/theme';
 import { GlobalStyles } from './components/global';
 import Toggle from './components/Toggle';
-import Pres from './components/Pres';
+import Pres from './components/Pres'
+import Timer from './components/Timer'
 
 import Home from './components/Home';
 import NewPres from './components/NewPres';
@@ -55,6 +56,7 @@ function App() {
 	      <Route exact path="/" render = {() => < Home clickPresentation={clickPresentation}/>}/>
 	      <Route exact path="/pres" render={()=> <Pres presentation = {presentation} clickPresentation = {clickPresentation}/>}/> 
         <Route exact path="/new" render={()=> <NewPres clickPresentation = {clickPresentation}/>}/>
+        <Route exact path="/timer" component={Timer} />
         <Route exact path="/update" render={()=> <UpdatePres presentation = {presentation} />}/>
        <Redirect to="/"/>
     </Switch>
