@@ -3,10 +3,11 @@ import TimerDisplay from './TimerDisplay'
 import TimerButtons from './TimerButtons'
 import '../css/timer.css'
 
-function Timer() {
+function Timer(props) {
     const [time, setTime] = useState({ms:0, s:0, m:0, h:0})
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0)
     // 0 = not started
     // 1 = started
     // 2 = pause
@@ -47,6 +48,24 @@ function Timer() {
         setTime({ms:0, s:0, m:0, h:0})
     };
     const resume = () => start();
+    
+    if(!props.presentation){
+        return <></>
+    }
+
+    const renderslides = props.presentation.sections.map((section, index)=> {
+        const talkingpoints = section.talking_points.map((point, index)=> {
+            return(
+                <li key={index}>{point.point}</li>
+            )
+        })
+        return(
+            <div index={index}>
+                <h1>{section.title}</h1>
+                <ul>{talkingpoints}</ul>
+            </div>
+        )
+    })
 
     return (
         <div className="main-section">
@@ -54,6 +73,13 @@ function Timer() {
                 <div className="timer">
                     <TimerDisplay time={time} />
                     <TimerButtons status={status} resume={resume} stop={stop} reset={reset} start={start}/>
+                </div>
+            </div>
+            <div className="slides">
+                {renderslides[currentIndex]}
+                <div className="controlSlideButtons">
+                <button onClick= {() => setCurrentIndex(currentIndex -1)}>Previous</button>
+                <button onClick= {() => setCurrentIndex(currentIndex + 1)}>Next</button>
                 </div>
             </div>
         </div>
