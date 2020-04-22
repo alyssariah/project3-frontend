@@ -52,7 +52,10 @@ function Timer(props) {
     };
     const resume = () => start();
     
-
+    if(props.currentIndex == 0){
+        if(props.timeArr[1] == time.s)
+        console.log("you are behind")
+    }
   
 
     return (
