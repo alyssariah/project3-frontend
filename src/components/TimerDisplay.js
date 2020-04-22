@@ -6,7 +6,7 @@ function TimerDisplay(props) {
         if(props.time.h === 0) {
             return '';
         } else {
-            return <span>{(props.time.h >= 10)? props.time.h : "0"+ props.time.h}</span>;
+            return <span className="timerDisplay">{(props.time.h >= 10)? props.time.h : "0"+ props.time.h}</span>;
         }
     }
     return (
