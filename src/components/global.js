@@ -23,7 +23,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    align-items: center;
     background: ${({ theme }) => theme.body1};
     color: ${({ theme }) => theme.text1};
     transition: all 0.25s linear;
@@ -49,3 +48,6 @@ export const GlobalStyles = createGlobalStyle`
  }
 
 `
+
+    // from body -- align-items: center;
+
