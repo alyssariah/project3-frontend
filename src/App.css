@@ -9,11 +9,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  border-bottom: 2px solid black;
   width: 100%;
   background-color:#E2E2E2;
   height: 8vh;
   z-index: 2;
+  border-bottom: 1px solid gray;
 }
 header a{
   text-decoration: none;
@@ -21,10 +21,16 @@ header a{
 }
 h1 {
   text-align: center;
-  font-size: 28px;
+  font-size: 22px;
+}
+h1 span {
+  font-size: 16px;
 }
 i {
   font-size: 25px;
+}
+.fa-home{
+  margin-right: 8px;
 }
 .togglebutton {
   position: absolute;
@@ -39,6 +45,7 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 .instructions h3 {
   background-color: white;

@@ -1,3 +1,8 @@
+
+button a {
+    text-decoration: none;
+    color: black;
+}
 .presentationsGroup {
     display: flex;
     justify-content: center;
@@ -18,9 +23,21 @@
     position: relative;
 
 }
-.far {
+.presList a {
+    text-decoration: none;
+}
+.fa-trash-alt {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+.far:hover {
+    cursor: pointer;
+  }
+.buttons {
+    display: flex;
+    position: absolute;
+    top: 10vh;
+    right: 5px;
 }
     /* fa-trash-alt */
