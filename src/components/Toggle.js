@@ -11,11 +11,11 @@ export default function Toggle({ theme, toggleTheme }){
   if (theme === 'light')
     { button = (
       <button className="togglebutton" onClick={toggleTheme}>
-      <i className="moonIcon" className="fas fa-moon"></i>
+      <i className="moonIcon fas fa-moon"></i>
       </button>)}
   else { button = ( 
       <button className="togglebutton" onClick={toggleTheme}>
-      <i className="sunIcon" className="fas fa-sun"></i>
+      <i className="sunIcon fas fa-sun"></i>
       </button>)}
   return (
     <div>
