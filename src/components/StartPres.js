@@ -1,5 +1,7 @@
 import React, {useState} from "react"
 import Timer from './Timer'
+import{Redirect} from 'react-router-dom'
+import '../css/startpres.css'
 
 function StartPres(props) {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -7,7 +9,7 @@ function StartPres(props) {
     let timeArr = [0]
 
     if(!props.presentation){
-        return <></>
+        return <Redirect to="/"/>
     }
 
     const renderslides = props.presentation.sections.map((section, index)=> {
@@ -35,8 +37,10 @@ function StartPres(props) {
         <div className="slides">
             {renderslides[currentIndex]}
             <div className="controlSlideButtons">
-                <i onClick= {() => setCurrentIndex(currentIndex -1)}class="fas fa-chevron-left"></i>
-                <i onClick= {() => setCurrentIndex(currentIndex + 1)}class="fas fa-chevron-right"></i>
+                <i onClick= {() => {
+                    if(currentIndex != 0){setCurrentIndex(currentIndex -1)}}} class="fas fa-chevron-left"></i>
+                <i onClick= {() => {
+                    if(currentIndex != renderslides.length-1){setCurrentIndex(currentIndex +1)}}}class="fas fa-chevron-right"></i>
             </div>
         </div>
         </>
