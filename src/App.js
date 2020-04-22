@@ -56,7 +56,7 @@ function App() {
 	      <Route exact path="/" render = {() => < Home clickPresentation={clickPresentation}/>}/>
 	      <Route exact path="/pres" render={()=> <Pres presentation = {presentation} clickPresentation = {clickPresentation}/>}/> 
         <Route exact path="/new" render={()=> <NewPres clickPresentation = {clickPresentation}/>}/>
-        <Route exact path="/timer" component={Timer} />
+        <Route exact path="/timer" render={()=> <Timer presentation = {presentation} />} />
         <Route exact path="/update" render={()=> <UpdatePres presentation = {presentation} />}/>
        <Redirect to="/"/>
     </Switch>

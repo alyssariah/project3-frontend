@@ -1,3 +1,26 @@
 .main-section {
     text-align: center;
 }
+.slides {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.slides ul {
+    text-align: left;
+}
+.slides ul li {
+    margin: 10px;
+}
+.slides button {
+    width: 20vw;
+    height: 6vh
+}
+.controlSlideButtons{
+    margin: 0 20px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
