@@ -18,6 +18,20 @@ h2 {
     justify-content: space-between;
     align-items: center;
 }
+.startButton {
+    border-radius: 0px;
+    height: 6vh;
+    width: 45vw;
+    background-color: #f50a0a;
+    font-size: 16px;
+}
+.startTimerClass {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
 /* .fa-edit {
     position: relative;
 } */
