@@ -1,26 +1,29 @@
 import React from 'react'
 import { func, string } from 'prop-types';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 // import styles from './Toggle.styled.js';
 
-const Toggle = ({ theme, toggleTheme }) => {
+export default function Toggle({ theme, toggleTheme }){
   const isLight = theme === 'light';
+  let button;
+  console.log("theme", theme)
+  console.log("isLight", isLight)
+  if (theme === 'light')
+    { button = (
+      <button className="togglebutton" onClick={toggleTheme}>
+      <i className="moonIcon" className="fas fa-moon"></i>
+      </button>)}
+  else { button = ( 
+      <button className="togglebutton" onClick={toggleTheme}>
+      <i className="sunIcon" className="fas fa-sun"></i>
+      </button>)}
   return (
-    <>
-    <button className="togglebutton" onClick={toggleTheme}>
-      <i className="sunIcon" className="fas fa-sun"></i><i className="moonIcon" className="fas fa-moon"></i>
+    <div>
+      {button}
+    </div>
+  )}
 
-    </button>
-    <div className="toggleIconDiv" onClick={toggleTheme}>
-      {/* <i className="sunIcon" className="fas fa-sun"></i><i className="moonIcon" className="fas fa-moon"></i> */}
-      </div>
-    </>
-  );
-};
 
-Toggle.propTypes = {
-  theme: string.isRequired,
-  toggleTheme: func.isRequired,
-}
-
-export default Toggle;
+// Toggle.propTypes = {
+//   theme: string.isRequired,
+//   toggleTheme: func.isRequired,
