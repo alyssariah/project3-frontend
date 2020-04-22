@@ -6,6 +6,7 @@ export const lightTheme = {
     button1: 'lightcyan',
     highlight: 'darkblue',
     themeicon: 'fas fa-moon',
+    main: 'snow',
     // toggleBorder: '#FFF',
     // gradient: 'linear-gradient(#39598A, #79D7ED)',
   }
@@ -17,6 +18,7 @@ export const lightTheme = {
     button1: 'darkcyan',
     highlight: 'aliceblue',
     themeicon: 'fas fa-moon',
+    main: '#403e41',
     // toggleBorder: '#6B8096',
     // gradient: 'linear-gradient(#091236, #1E215D)',
   }

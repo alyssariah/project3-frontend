@@ -44,5 +44,8 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
+ main {
+  background: ${({ theme }) => theme.main};
+ }
 
 `
