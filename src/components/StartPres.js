@@ -31,7 +31,7 @@ function StartPres(props) {
     })
     return(
         <>
-        <Timer timeArr={timeArr} currentIndex={currentIndex}/>
+        <Timer timeArr={timeArr} currentIndex={currentIndex} length={renderslides.length}/>
         <div className="slides">
             {renderslides[currentIndex]}
             <div className="controlSlideButtons">
