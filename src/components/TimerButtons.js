@@ -2,7 +2,7 @@ import React from 'react'
 
 function TimerButton(props) {
     return (
-        <div>
+        <div className="controlButtons">
             {(props.status === 0)?
               <button
               onClick={props.start}>Start</button> : ""

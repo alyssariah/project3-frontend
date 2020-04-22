@@ -10,10 +10,10 @@ function TimerDisplay(props) {
         }
     }
     return (
-        <div>
+        <div className="clockDiv">
             {h()}&nbsp;&nbsp;
-            <span style={{color: props.changeColor? "red": "blue"}}>{(props.time.m >= 10)? props.time.m : "0"+ props.time.m}</span>&nbsp;:&nbsp;
-            <span style={{color: props.changeColor? "red": "blue"}}>{(props.time.s >= 10)? props.time.s : "0"+ props.time.s}</span>&nbsp;&nbsp;
+            <span className="clock" style={{color: props.changeColor? "red": "blue"}}>{(props.time.m >= 10)? props.time.m : "0"+ props.time.m}</span>&nbsp;:&nbsp;
+            <span className="clock" style={{color: props.changeColor? "red": "blue"}}>{(props.time.s >= 10)? props.time.s : "0"+ props.time.s}</span>&nbsp;&nbsp;
         </div>
     )
 }

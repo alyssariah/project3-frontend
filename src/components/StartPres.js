@@ -37,8 +37,10 @@ function StartPres(props) {
         <div className="slides">
             {renderslides[currentIndex]}
             <div className="controlSlideButtons">
-                <i onClick= {() => setCurrentIndex(currentIndex -1)}class="fas fa-chevron-left"></i>
-                <i onClick= {() => setCurrentIndex(currentIndex + 1)}class="fas fa-chevron-right"></i>
+                <i onClick= {() => {
+                    if(currentIndex != 0){setCurrentIndex(currentIndex -1)}}} class="fas fa-chevron-left"></i>
+                <i onClick= {() => {
+                    if(currentIndex != renderslides.length-1){setCurrentIndex(currentIndex +1)}}}class="fas fa-chevron-right"></i>
             </div>
         </div>
         </>
