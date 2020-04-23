@@ -4,30 +4,29 @@ import {deleteTalk, createTalk, updateTalk} from '../services/talkpoint-api-help
 
         //I NEED TO SEND IN PROPS WHICH WILL BE THE FROM THE INDIVIDUAL SECTION**
 function UpdatePoint(props){
-const[updatePoint, setUpdatePoint] = useState("")
-  
 const [pointBullet, setPointBullet] =useState(props.points)
-// const [isLoading, setIsloading] = useState(true)
-//const [singleTalk, setsinglePoint] = useState(props.point.points)//this is a single point
 const [subFormReset, setSubFormReset] = useState('')//sub form reset
+const[updatePointTalk, setUpdatePointTalk] = useState('')
 
+const updatingPoint =(e)=>{
+    setUpdatePointTalk(e.target.value)
+}
 
 //ITS GETTING ARRAY OF OBJECT TALKPOINTS FROM THE SECT CLICKED
 console.log("props.points from updatePoint", props.points)
-console.log("props.points.point from updatePoint", props.points[0].point)
-console.log('this is state', pointBullet)
+// console.log("props.points.point from updatePoint", props.points[0].point)
+console.log('this is state for the delete', pointBullet)
+console.log("this is update (what the state os) on points page.... ", updatePointTalk)
 //renders and array of objects
 
 
-    useEffect((e) => {
+    useEffect(() => {
         const makeAPICall = async () => {
           const resp =  await deleteTalk()
           setPointBullet(resp)
         }
         makeAPICall()
       }, [])
-
-    
 
     // const handleAdd = async(e) => {
     //     e.preventDefault()
@@ -36,11 +35,9 @@ console.log('this is state', pointBullet)
     //     //this is editing a single value
     // }
 
-
-
    const handleEdit = async(e) => {
     e.preventDefault()
-    const json = await updateTalk(props.points._id, {"point": updatePoint})
+    const json = await updateTalk(props.points._id, {"point": updatePointTalk})
 
 }
 
@@ -53,28 +50,22 @@ console.log('this is state', pointBullet)
         //this is creating a new array and reassining the props as such
   }
 
-//<button onClick={()=>handleEdit}>update</button>
-
-  //RENDER TALKPOINTS 
-
-  //each one gets a delete and update
-  //change button to icons later]
-  
-  
   const listOfTalkingPoints = props.points.map((individualPoint, index)=>{
   return(
      <span key={index}>    
       <p>Talking Point: {individualPoint.point}</p> 
   <button onClick={()=>handleDelete(individualPoint._id)}>Delete {individualPoint._id}</button>
-      
+  <form onSubmit={handleEdit}>
+      <input type="text" value ={updatePointTalk} onChange ={updatingPoint}/>
+      <button>Update</button>
+      </form>
       </span>)
   })
-
-
     return(
         <div className ="changeTalkpoints">
             <h1>{listOfTalkingPoints}</h1>
     </div>
+    //add points here
 
 
 
