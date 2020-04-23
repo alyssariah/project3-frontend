@@ -50,14 +50,13 @@ const handleNewTalkingPoint=(e)=>{
             <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
             <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
             <button className="addSection">+ update</button>
-            
-            <form onSubmit ={handleAdd}>
+        </form>}
+          {renderPoints}
+          <form onSubmit ={handleAdd}>
                 <input type ="text" onChange={handleNewTalkingPoint} value ={talk}>   
                 </input>
                 <button>add talking</button>
             </form>
-        </form>}
-          {renderPoints}
         {/* <Points points={props.section.talking_points} /> */}
     </div>
     )
