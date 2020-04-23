@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import Points from './Points'
-import {updateSect} from '../services/section-api-helper'
+import {updateSect, deleteSect} from '../services/section-api-helper'
 import UpdatePoint from "./UpdatePoint"
+import '../css/updatesec.css'
+
 import {createTalk} from '../services/talkpoint-api-helper'
 
 function UpdateSect(props){
@@ -38,6 +40,11 @@ const handleNewTalkingPoint=(e)=>{
         setShowEdit(false)
         props.renderPage()
     }
+
+    const handleDelete = async() => {
+        const json = await deleteSect(props.section._id)
+        props.renderPage()
+    }
     const renderPoints = props.section.talking_points.map((point, index)=> {
         return(
            <UpdatePoint sectionID ={props.section._id} point={point} renderPage={props.renderPage}/>
@@ -45,7 +52,7 @@ const handleNewTalkingPoint=(e)=>{
     })
     return(
         <div>
-        <div className="sectionPlace"><h3><i onClick= {()=>setShowEdit(!showEdit)}class="far fa-edit"></i>{props.section.title}</h3><span className="timeDisplay">{time}</span></div>
+        <div className="sectionPlace"><h3><span class="fa-stack"><i onClick= {()=>setShowEdit(!showEdit)}className="far fa-edit"></i><i onClick={handleDelete} className="far fa-trash-alt"></i></span>{props.section.title}</h3><span className="timeDisplay">{time}</span></div>
         {showEdit &&<form className="sectionForm" onSubmit={sectionSubmit}>
             <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
             <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
