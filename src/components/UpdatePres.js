@@ -95,10 +95,14 @@ function UpdatePres(props) {
     const showSectionCreateForm =()=>{
         setCreateForm(!createForm)
     }
+
+    const Blastoff = async() => {
+        const presentation = await getPresById(props.presentation._id)
+        props.clickPresentation(presentation)
+    }
             
     return (
         <div className="updatePresMain">
-            <div><Link to='/pres'><button>Back To Presentation</button></Link></div>
             <h2><i onClick= {()=>setShowEdit(!showEdit)} class="far fa-edit"></i>
             
             {
@@ -143,7 +147,7 @@ function UpdatePres(props) {
 
 
             <p className="time">Total time: {totalTime}</p>
-            
+            <Link to="/pres"><button className="doneButton" onClick={Blastoff}>Done!</button></Link>
         </div>
     )
 }
