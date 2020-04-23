@@ -138,9 +138,9 @@ function UpdatePres(props) {
 
         {!createForm&&<button onClick ={showSectionCreateForm}>Add Section</button>}
         {createForm &&  <form onSubmit ={handleAddSection}>
-               <p> <label>Title<input type ="text" onChange={handleNewSectionTitle} value ={creatSectTitle}>   
+               <p> <label>Title<input type ="text" onChange={handleNewSectionTitle} value ={creatSectTitle} required="required">   
                 </input></label></p>
-                <p> <label>Time:<input type ="text" onChange={handleNewSectionTime} value ={createNewTime}>   
+                <p> <label>Time:<input type ="text" onChange={handleNewSectionTime} value ={createNewTime} required="required">   
                 </input></label></p>
                 <button>+ Section</button>
             </form>}
