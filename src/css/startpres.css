@@ -1,9 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 .main-section {
-    text-align: center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.clockWrapper {
+    width: 80vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.clockDiv{
+    border: 2px solid black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    height: 50vh;
+    width: 90vw;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.controlButtons {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.controlButtons button {
+    margin: 8px;
+    height: 8vh;
+    width: 15vw;
+    border-radius: 30px;
+}
+
 .slides {
-    height: 70vh;
+    /* height: 70vh; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -26,25 +61,23 @@
 .fa-chevron-left, .fa-chevron-right {
     font-size: 50px;
 }
-.clockDiv {
-    margin-top: 30px;
-}
-.clock{
-    font-family: 'Orbitron', sans-serif;
-    font-size: 30px;
-}
-.controlButtons button {
-    margin: 8px;
-    width: 20vw;
-}
 @media(min-width: 768px){
-    .clock {
-        font-size: 40px;
+    .clockDiv{
+        font-size: 90px;
+        height: 60vh;
+        width: 70vw;
+        border-radius: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .controlButtons button {
+        height: 10vh;
         width: 15vw;
-        height: 4vh;
-        font-size: 16px;
+        border-radius: 80px;
+        /* width: 10vw;
+        height: 5vh; */
+        font-size: 24px;
     }
     .fa-chevron-left, .fa-chevron-right {
         font-size: 70px;
@@ -56,4 +89,24 @@
         text-align: left;
         font-size: 40px;
     }
+}
+@media (min-width: 1024px){
+    .clockDiv{
+        font-size: 90px;
+        height: 50vh;
+        width: 40vw;
+        border-radius: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .controlButtons button {
+        height: 10vh;
+        width: 8vw;
+        border-radius: 80px;
+        /* width: 10vw;
+        height: 5vh; */
+        font-size: 20px;
+    }
+
 }
