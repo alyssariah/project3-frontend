@@ -10,7 +10,7 @@ h2 {
 }
 .presMain .fa-edit{
     position: absolute;
-    top: 11vh;
+    top: 8vh;
     right: 8px;
 }
 .sectionPlace {
@@ -19,10 +19,10 @@ h2 {
     align-items: center;
 }
 .startButton {
-    border-radius: 0px;
+    border-radius: 5px;
     height: 6vh;
-    width: 45vw;
-    background-color: #f50a0a;
+    width: 30vw;
+    /* background-color: #f50a0a; */
     font-size: 16px;
 }
 .startTimerClass {
@@ -30,6 +30,31 @@ h2 {
     width: 100%;
     display: flex;
     justify-content: center;
+
+}
+@media(min-width: 768px){
+    .presMain button {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .presMain .startButton {
+        width: 30vw;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .presMain h2 {
+        font-size: 32px;
+    }
+    .presMain h3 {
+        font-size: 24px;
+    }
+    .presMain p {
+        margin: 60px 0;
+        font-size: 24px;
+    }
+    .presSectionDisplay {
+        margin: 40px 15px;
+    }
 
 }
 /* .fa-edit {

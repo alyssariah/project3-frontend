@@ -76,8 +76,8 @@ function NewPres(props){
         {showStart && 
         <div className="addProject">
             <form onSubmit={nameSubmit}>
-            <label>Presentation Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
-            <button>Submit</button>
+                <label>Presentation Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
+                <button>Submit</button>
             </form>
         </div>
         }
@@ -88,9 +88,9 @@ function NewPres(props){
                 {rendersections}  
              <h4>Add a section: </h4>
             <form className="sectionForm" onSubmit={sectionSubmit}>
-            <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
-            <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
-            <button className="addSection">+ Add</button>
+                <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
+                <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
+                <button className="addSectionButton">+ Add</button>
             </form>
             <p className="time">Total time: {totalTime}</p>
             <Link to="/pres"><button className="doneButton" onClick={Blastoff}>Done!</button></Link>
