@@ -48,6 +48,3 @@ export const GlobalStyles = createGlobalStyle`
  }
 
 `
-
-    // from body -- align-items: center;
-
