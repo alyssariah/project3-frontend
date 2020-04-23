@@ -1,7 +1,11 @@
-
+button {
+    z-index: 1.5;
+}
 button a {
     text-decoration: none;
-    color: black;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: .5em;
 }
 .presentationsGroup {
     display: flex;
@@ -41,6 +45,12 @@ button a {
     top: 10vh;
     right: 5px;
 }
+
+.createSubmitButt {
+    font-style: bold;
+    size: 1.2em;
+}
+
 @media(min-width: 768px){
     .presList {
         width: 40vw;
