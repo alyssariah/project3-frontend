@@ -55,6 +55,9 @@ h2 {
     .presSectionDisplay {
         margin: 40px 15px;
     }
+    .sectionPlace h3 {
+        font-size: 24px;
+    }
 
 }
 /* .fa-edit {
