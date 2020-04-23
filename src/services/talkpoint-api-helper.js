@@ -1,14 +1,14 @@
 import axios from "axios"
 
 const api = axios.create({
-    baseURL: "https://alyssa-presentations-timer.herokuapp.com/"
+    baseURL: "https://alyssa-presentations-timer.herokuapp.com"
 });
 
 
 
 //delete
 export const deleteTalk = async (pointId) => {
-    const resp = await api.delete(`/talkpoint/${pointId}}`);
+    const resp = await api.delete(`/talkpoint/${pointId}`);
     return resp.data
 }
 
