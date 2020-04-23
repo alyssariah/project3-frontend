@@ -3,7 +3,21 @@ import Points from './Points'
 import '../css/pres.css'
 import {Link, Redirect} from "react-router-dom"
 
+
 function Pres(props) {
+    // const [doneEditing, setDoneEditing] =useState(false)
+    // const [needsEditing, setneedsEditing] =useState(true)
+    
+    // const handleDoneEditing = ()=>{
+    //     setDoneEditing(!doneEditing)
+    //     setneedsEditing(!needsEditing)
+    // }
+    // const handleEditThisPres = ()=>{
+    //     setDoneEditing(!doneEditing)
+    //     setneedsEditing(!needsEditing)
+    // }
+//<button onClick ={handleDoneEditing}>Done Editing</button>
+
     let totalTime = 0
     console.log('Pres-props', props)
     if(!props.presentation){
@@ -23,6 +37,7 @@ function Pres(props) {
             
     return (
         <div className="presMain">
+            <div><Link to='/'><button>Back To Presentation List</button></Link></div>
             <Link to='/update'><i class="far fa-edit"></i></Link>
             <h2>Title: {props.presentation.name}</h2>
             <Link to="/timer" className="startTimerClass"><button className="startButton">Start Prensentation</button></Link>

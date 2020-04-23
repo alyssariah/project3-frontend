@@ -3,7 +3,7 @@ import '../css/pres.css'
 import UpdateSect from './UpdateSect'
 import {updatePres, getPresById} from '../services/api-helper'
 import {createSect} from '../services/section-api-helper'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 
 function UpdatePres(props) {   
@@ -15,6 +15,7 @@ function UpdatePres(props) {
     const [createForm, setCreateForm]= useState(false)
     const [creatSectTitle, setcreatSectTitle] =useState('')
     const [createNewTime, setCreateNewTime] = useState('')
+   
     
     useEffect(() => {
         const APICall = async() => {
@@ -99,7 +100,9 @@ function UpdatePres(props) {
             
     return (
         <div className="updatePresMain">
+            <div><Link to='/pres'><button>Back To Presentation</button></Link></div>
             <h2><i onClick= {()=>setShowEdit(!showEdit)} class="far fa-edit"></i>
+            
             {
                  !showEdit
                  &&
@@ -114,6 +117,7 @@ function UpdatePres(props) {
                 showEdit 
                     &&
                 <form className="nameForm" onSubmit={presNameSubmit}>
+                    
                         <p>
                             <label>Presentation Name: </label>
                             <input
@@ -141,6 +145,7 @@ function UpdatePres(props) {
 
 
             <p className="time">Total time: {totalTime}</p>
+            
         </div>
     )
 }
