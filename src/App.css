@@ -13,7 +13,6 @@ header {
   padding-left: 20px;
   padding-bottom: 30px;
   width: 100%;
-  background-color:#E2E2E2;
   height: 6vh;
   z-index: 2;
   border-bottom: 1px solid gray;
@@ -21,8 +20,8 @@ header {
 }
 header a {
   text-decoration: none;
-  /* color: black; */
 }
+
 h1 {
   text-align: center;
   font-size: 22px;
@@ -54,7 +53,6 @@ i {
   position: absolute;
   height: 94vh;
   width: 100vw;
-  /* max-width: 800px; */
   top: 6vh;
   background-color: rgba(0,0,0,0.4);
   display: flex;
@@ -68,19 +66,7 @@ i {
   color: gray;
 }
 
-.themespan {
-  font-size: .5em; 
-  padding-left: 15px;
-}
-
-/* .instructions h3 {
-  background-color: white;
-  padding-top: 100px;
-  border-radius: 10px;
-} */
-
 .instructions ul {
-  background-color: white;
   padding: 30px;
   border-radius: 10px;
   line-height: 1.35em;

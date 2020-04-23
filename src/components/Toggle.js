@@ -16,27 +16,5 @@ export default function Toggle({ theme, toggleTheme }){
   return (
     <div> 
       {div}
-      <br />
-      <br />
-      <span className="themespan"> theme</span>
     </div>
   )}
-
-
-  // export default function Toggle({ theme, toggleTheme }){
-  //   const isLight = theme === 'light';
-  //   let button;
-  //   if (theme === 'light')
-  //     { button = (
-  //       <button className="togglebutton" onClick={toggleTheme}>
-  //       <i className="moonIcon fas fa-moon"></i>
-  //       </button>)}
-  //   else { button = ( 
-  //       <button className="togglebutton" onClick={toggleTheme}>
-  //       <i className="sunIcon fas fa-sun"></i>
-  //       </button>)}
-  //   return (
-  //     <div>
-  //       {button}
-  //     </div>
-  //   )}

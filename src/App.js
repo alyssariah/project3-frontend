@@ -30,6 +30,7 @@ function App() {
 
   return (
     <>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> 
     <header><Link to ="/"><h1><i class="fas fa-home"></i>Presentation <span>Buddy</span></h1></Link><i onClick={() => setShowInstructions(!showInstructions)} className="fas fa-info-circle"></i></header>
     {showInstructions && 
       <div className="instructions">
@@ -45,7 +46,6 @@ function App() {
             <p>Designed and built by <a href="https://www.linkedin.com/in/alyssa-riah-jackson/" target="_blank">Alyssa Jackson</a>, <a href="https://www.linkedin.com/in/stanleypascua/" target="_blank">Stanley Pascua</a>, <a href="https://www.linkedin.com/in/marshallbrock/" target="_blank">Marshall Brock</a>, and <a href="https://www.linkedin.com/in/carolynnickell/" target="_blank">Carolyn Nickell</a> through General Assembly.</p>
           </ul>
         </div>}
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> 
          <>
         <GlobalStyles />
         <Toggle theme={theme} toggleTheme={toggleTheme} />
