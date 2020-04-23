@@ -11,7 +11,7 @@ header {
   padding: 0 20px;
   width: 100%;
   background-color:#E2E2E2;
-  height: 8vh;
+  height: 6vh;
   z-index: 2;
   border-bottom: 1px solid gray;
 }
@@ -34,14 +34,14 @@ i {
 }
 .togglebutton {
   position: absolute;
-  top: 10vh;
-  margin: 2px;
+  top: 8vh;
+  left: 10px;
 }
 .instructions {
   position: absolute;
-  height: 92vh;
+  height: 94vh;
   width: 100vw;
-  top: 8vh;
+  top: 6vh;
   background-color: rgba(0,0,0,0.4);
   display: flex;
   justify-content: center;
@@ -68,6 +68,19 @@ button {
 main {
   border-radius: 20px;
 }
-
+@media(min-width: 768px){
+  h1 {
+    font-size: 30px;
+  }
+  h1 span {
+    font-size: 26px;
+  }
+  i {
+    font-size: 32px;
+  }
+  .instructions h3 {
+    padding: 250px;
+  }
+}
 
 

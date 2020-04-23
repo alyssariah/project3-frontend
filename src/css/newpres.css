@@ -81,10 +81,64 @@ button {
     height: 4vh;
     font-size: 14px;
 }
-.addSection {
+.addSectionButton {
     align-self: start;
 }
 .doneButton {
     padding: 10px 20px;
     font-size: 16px;
+}
+@media(min-width: 768px){
+    .newPresMain h1 {
+        font-size: 40px;
+    }
+    .addProject label {
+        font-size: 28px;
+    }
+    .addProject input {
+        font-size: 24px;
+        height: 5vh;
+    }
+    .addProject form button{
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+    .includeTitle h2 {
+        font-size: 36px;
+    }
+    .includeTitle h4 {
+        font-size: 24px;
+    }
+    .sectionForm label {
+        font-size: 22px;
+    }
+    .sectionForm input {
+        font-size: 22px;
+        width: 60vw;
+    }
+    .addSectionButton {
+        font-size: 18px;
+    }
+    .doneButton {
+        font-size: 20px;
+        padding: 12px 25px;
+        border-radius: 30px;
+    }
+    .section p {
+        font-size: 24px;
+    }
+    .section label {
+        font-size: 20px;
+    }
+    .section button {
+        padding: 5px 8px;
+    }
+    .section input {
+        font-size: 20px;
+    }
+    ul li {
+        font-size: 22px;
+    }
+
 }

@@ -37,3 +37,23 @@
     margin: 8px;
     width: 20vw;
 }
+@media(min-width: 768px){
+    .clock {
+        font-size: 40px;
+    }
+    .controlButtons button {
+        width: 15vw;
+        height: 4vh;
+        font-size: 16px;
+    }
+    .fa-chevron-left, .fa-chevron-right {
+        font-size: 70px;
+    }
+    .slides ul li {
+        font-size: 24px;
+    }
+    .slides h1 {
+        text-align: left;
+        font-size: 40px;
+    }
+}

@@ -13,7 +13,7 @@ function Pres(props) {
     const renderSections = props.presentation.sections.map((section, index) => {
         totalTime += section.time
         return (
-            <div>
+            <div className="presSectionDisplay">
                 <h3>Section {index +1}: {section.title} <span className="timeDisplay">{section.time}</span></h3>
                 <Points points={section.talking_points} />
             </div>

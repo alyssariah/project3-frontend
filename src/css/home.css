@@ -7,13 +7,14 @@ button a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding-top: 5vh;
     height: 90vh;
     overflow: scroll;
 }
 .presList{
     border: 1px solid transparent;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
-    margin: 40px;
+    margin: 20px 30px;
     width: 70vw;
     display: flex;
     justify-content: center;
@@ -40,4 +41,21 @@ button a {
     top: 10vh;
     right: 5px;
 }
-    /* fa-trash-alt */
+@media(min-width: 768px){
+    .presList {
+        width: 40vw;
+        height: 25vh;
+    }
+    .buttons button {
+        margin: 5px;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+@media(min-width: 1024px){
+    .presList {
+        width: 25vw;
+        height: 30vh;
+        margin: 10px 40px;
+    }
+}
