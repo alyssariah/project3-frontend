@@ -1,28 +1,39 @@
 import React, {useState, useEffect} from "react"
 import '../css/pres.css'
 import UpdateSect from './UpdateSect'
-import {updatePres} from '../services/api-helper'
+import {updatePres, getPresById} from '../services/api-helper'
+import {Redirect} from 'react-router-dom'
 
 
 function UpdatePres(props) {   
-    console.log('props at top', props)
-    const [name, setName] = useState(props.presentation.name) 
-    const [freshName, setFreshName] = useState(props.presentation.name)
-
+    console.log('props at top', props.presentation)
+    const [name, setName] = useState() 
+    const [freshName, setFreshName] = useState()
+    const [currentPresentation, setCurrentPresentation] = useState()
+    const [currentSections, setCurrentSections] = useState([])
     const [showEdit, setShowEdit] = useState(false)
-
-    // useEffect(() => {
-    //     // Update the presentation name using the input from form beelow / browser API
-    //     props.presentation.name = {freshName};
-    //   });
+    
+    
+    useEffect(() => {
+        const APICall = async() => {
+            if(props.presentation){
+                const json = await getPresById(props.presentation._id)
+                setName(json.name)
+                setFreshName(json.name)
+                setCurrentPresentation(json)
+                setCurrentSections(json.sections)
+            }
+        }
+       APICall()
+    }, []);
     
     let totalTime = 0
 
-    // console.log('Pres-props', props)
-
     if(!props.presentation){
-        return <></>
+        return <Redirect to="/"/>
     }
+
+    console.log("current", currentPresentation)
     
     const nameChange = (e) => {
         setName(e.target.value)
@@ -31,15 +42,24 @@ function UpdatePres(props) {
 
     const presNameSubmit = async(e) => {
         e.preventDefault()
-        const json = await updatePres(props.presentation._id, {"name": name})
+        const json = await updatePres(currentPresentation._id, {"name": name})
         setShowEdit(false)
         // getSections()
     }
 
-    const renderSections = props.presentation.sections.map((section, index) => {
+    const renderPage = async() => {
+        console.log("yes")
+        const json = await getPresById(props.presentation._id)
+        setName(json.name)
+        setFreshName(json.name)
+        setCurrentPresentation(json)
+        setCurrentSections(json.sections)
+    }
+
+    const renderSections = currentSections.map((section, index) => {
         totalTime += section.time
         return (
-           <UpdateSect section={section} inedx={index}/>
+           <UpdateSect section={section} inedx={index} renderPage={renderPage}/>
         )
     })
             
