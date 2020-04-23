@@ -8,6 +8,7 @@ function UpdatePoint(props){
     const [subFormReset, setSubFormReset] = useState('')//sub form reset
     const[updatePointTalk, setUpdatePointTalk] = useState('')
     const [currentPoint, setCurrentPoint] = useState()
+    // const[addingTalk, setAddingTalk] = useState('')
 
     const updatingPoint =(e)=>{
         setUpdatePointTalk(e.target.value)
@@ -19,6 +20,20 @@ function UpdatePoint(props){
     //     setTalkpointId(json._id)
     //     //this is editing a single value
     // }
+
+// const HandleaddingTalk =(e)=>{
+//         setAddingTalk(e.target.value)
+//         console.log('passing this to setAddingTalk', e)
+//     }
+    
+// const handleAdd = async(e) => {
+//     e.preventDefault()
+//     console.log("WHAT IM SENIDNG TO THR BACKEND", addingTalk)
+//     const json = await createTalk(props.sectionID,{"point": addingTalk})
+//     console.log("HERE IS THE JSON DATA FROM WHERE YOU ARE adding",json)
+//     }
+    
+    
 
    const handleEdit = async(e) => {
     e.preventDefault()
@@ -47,10 +62,3 @@ function UpdatePoint(props){
         )
     }
 export default UpdatePoint
-
-
-
-
-
-
-
