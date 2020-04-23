@@ -17,11 +17,11 @@ function UpdatePres(props) {
     useEffect(() => {
         const APICall = async() => {
             if(props.presentation){
-                const json = await getPresById(props.presentation._id)
-                setName(json.name)
-                setFreshName(json.name)
-                setCurrentPresentation(json)
-                setCurrentSections(json.sections)
+                // const json = await getPresById(props.presentation._id)
+                setName(props.presentation.name)
+                setFreshName(props.presentation.name)
+                setCurrentPresentation(props.presentation)
+                setCurrentSections(props.presentation.sections)
             }
         }
        APICall()
