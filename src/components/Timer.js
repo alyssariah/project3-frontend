@@ -58,23 +58,26 @@ function Timer(props) {
             if(props.timeArr[i+1]> time.m){
                 changeColor = false
             }
-            else if(props.timeArr[i+1] <= time.m){
+            else if((props.timeArr[i+1]) <= time.m){
                 changeColor=true
             } 
         }
+    }
+
+
+    let timeleft = {s:59 -time.s, m:(props.timeArr[props.currentIndex+1]-1) - time.m}
+    
+    if(timeleft.m < 0){
+        timeleft={s:1+time.s, m:props.timeArr[props.currentIndex+1]-(time.m)}
     }
   
   
 
     return (
-        <div className="main-section">
             <div className="clockWrapper">
-                <div className="timer">
-                    <TimerDisplay changeColor= {changeColor} time={time} />
+                    <TimerDisplay changeColor= {changeColor} time={timeleft} />
                     <TimerButtons status={status} resume={resume} stop={stop} reset={reset} start={start}/>
-                </div>
             </div>
-        </div>
     )
 }
 
