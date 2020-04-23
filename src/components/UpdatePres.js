@@ -44,7 +44,6 @@ function UpdatePres(props) {
     }
    const handleNewSectionTitle =(e) =>{
     setcreatSectTitle(e.target.value)
-    
     renderPage()
     
    }
@@ -52,10 +51,9 @@ function UpdatePres(props) {
     const handleNewSectionTime =(e) =>{
         setCreateNewTime(e.target.value)
         renderPage()
-        
        }
 
-   //=========  
+ 
 
     if(!props.presentation){
         return <Redirect to="/"/>
@@ -138,7 +136,7 @@ function UpdatePres(props) {
         {createForm &&  <form onSubmit ={handleAddSection}>
                <p> <label>Title<input type ="text" onChange={handleNewSectionTitle} value ={creatSectTitle} required="required">   
                 </input></label></p>
-                <p> <label>Time:<input type ="text" onChange={handleNewSectionTime} value ={createNewTime}>   
+                <p> <label>Time:<input type ="text" onChange={handleNewSectionTime} value ={createNewTime} required="required">   
                 </input></label></p>
                 <button>+ Section</button>
             </form>}

@@ -3,12 +3,12 @@ import React, {useState} from 'react'
 function Points(props) {
     const [showPoints, setShowPoints] = useState(false)
     const [toggleWord, setToggleWord] = useState(true)
-    console.log('points-prop', props)
     const renderPoints = props.points.map((point, index) => {
         return (
                 <li>{point.point}</li>
         )
     })
+    
     return (
         <>
             {showPoints && <ul>{renderPoints}</ul>}
