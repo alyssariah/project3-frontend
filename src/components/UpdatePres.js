@@ -8,7 +8,6 @@ import {Redirect} from 'react-router-dom'
 function UpdatePres(props) {   
     console.log('props at top', props.presentation)
     const [name, setName] = useState() 
-    const [freshName, setFreshName] = useState()
     const [currentPresentation, setCurrentPresentation] = useState()
     const [currentSections, setCurrentSections] = useState([])
     const [showEdit, setShowEdit] = useState(false)
@@ -17,11 +16,9 @@ function UpdatePres(props) {
     useEffect(() => {
         const APICall = async() => {
             if(props.presentation){
-                const json = await getPresById(props.presentation._id)
-                setName(json.name)
-                setFreshName(json.name)
-                setCurrentPresentation(json)
-                setCurrentSections(json.sections)
+                setName(props.presentation.name)
+                setCurrentPresentation(props.presentation)
+                setCurrentSections(props.presentation.sections)
             }
         }
        APICall()
@@ -37,13 +34,13 @@ function UpdatePres(props) {
     
     const nameChange = (e) => {
         setName(e.target.value)
-        setFreshName(e.target.value)
     }
 
     const presNameSubmit = async(e) => {
         e.preventDefault()
         const json = await updatePres(currentPresentation._id, {"name": name})
         setShowEdit(false)
+        renderPage()
         // getSections()
     }
 
@@ -51,7 +48,6 @@ function UpdatePres(props) {
         console.log("yes")
         const json = await getPresById(props.presentation._id)
         setName(json.name)
-        setFreshName(json.name)
         setCurrentPresentation(json)
         setCurrentSections(json.sections)
     }
@@ -69,7 +65,7 @@ function UpdatePres(props) {
             {
                  !showEdit
                  &&
-                 <h2>{freshName}</h2>
+                 <h2>{name}</h2>
 
              }
              </h2>
