@@ -16,11 +16,6 @@ input {
     font-size: 12px;
     width: 30vw;
 }
-.sectionForm input {
-    width: 55vw;
-    font-size: 16px;
-    height: 5vh;
-}
 .addProject form {
     display: flex;
     flex-direction: column;
@@ -51,6 +46,23 @@ input {
     text-align: center;
     margin-bottom: 30px;
 }
+.sectionForm {
+    position: relative;
+}
+.sectionFrom label, .sectionForm input {
+    margin: 10px 5px;
+}
+.sectionForm input {
+    width: 50vw;
+    font-size: 16px;
+    height: 5vh;
+}
+.sectionForm button{
+    position: absolute;
+    bottom: 2vh;
+    padding: 4px 7px;
+}
+
 .time {
     text-align: right;
 }
@@ -69,7 +81,6 @@ input {
 }
 button {
     border: 2px solid black;
-    padding: 7px 10px;
 }
 .section button{
     padding: 2px 5px;
@@ -77,12 +88,13 @@ button {
 .section {
     margin-bottom: 30px;
 }
+.section form {
+    display: flex;
+    align-items: center;
+}
 .section input {
     height: 4vh;
     font-size: 14px;
-}
-.addSectionButton {
-    align-self: start;
 }
 .doneButton {
     padding: 10px 20px;
@@ -117,6 +129,9 @@ button {
         font-size: 22px;
         width: 60vw;
     }
+    .sectionForm button {
+        padding: 5px 10px;
+    }
     .addSectionButton {
         font-size: 18px;
     }
@@ -129,7 +144,7 @@ button {
         font-size: 24px;
     }
     .section label {
-        font-size: 20px;
+        font-size: 22px;
     }
     .section button {
         padding: 5px 8px;
@@ -139,6 +154,34 @@ button {
     }
     ul li {
         font-size: 22px;
+    }
+}
+@media(min-width: 1024px){
+    .addProject form{
+        display: flex;
+        flex-direction: row;
+    }
+    .addProject form input {
+        width: 50vw;
+    }
+    .sectionForm input {
+        width: 30vw;
+    }
+    .sectionForm {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .sectionForm button {
+        position: relative;
+        bottom: 0;
+        padding: 5px 10px;
+    }
+    .sectionForm label, .sectionForm input {
+        margin-right: 10px;
+    }
+    .addSectionButton {
+        align-self: center;
     }
 
 }
