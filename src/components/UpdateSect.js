@@ -3,7 +3,6 @@ import Points from './Points'
 import {updateSect, deleteSect} from '../services/section-api-helper'
 import UpdatePoint from "./UpdatePoint"
 import '../css/updatesec.css'
-
 import {createTalk} from '../services/talkpoint-api-helper'
 
 function UpdateSect(props){
@@ -11,14 +10,25 @@ function UpdateSect(props){
     const [time, setTime] = useState(props.section.time)
     const [showEdit, setShowEdit] = useState(false)
     const [talk, setTalk] = useState('')
+    const [showTalkPointForm, setShowTalkPointForm] =useState(false)
+    const [plusTalkAdd, setPlusTalkAdd] = useState(true)
    
+    const handleShowTalkpointForm =()=>{
+        setShowTalkPointForm(!showTalkPointForm)
+        setPlusTalkAdd(!plusTalkAdd)
+    }
+    const xButton =()=>{
+        setShowTalkPointForm(!showTalkPointForm)
+        setPlusTalkAdd(!plusTalkAdd)
+    }
 
 const handleAdd =async(e)=>{
     e.preventDefault()
+    console.log("this is talk im passing in", talk)
     const json = await createTalk(props.section._id,{"point":talk})
-    console.log('ADDING the json talkinpoint props.section._id',props.section._id)
-    console.log('ADDING the json talkinpoint talk',talk)
     setTalk("")
+    setShowTalkPointForm(!showTalkPointForm)
+    setPlusTalkAdd(!plusTalkAdd)
     props.renderPage()
 }
 const handleNewTalkingPoint=(e)=>{
@@ -52,18 +62,25 @@ const handleNewTalkingPoint=(e)=>{
     })
     return(
         <div>
-        <div className="sectionPlace"><h3><span class="fa-stack"><i onClick= {()=>setShowEdit(!showEdit)}className="far fa-edit"></i><i onClick={handleDelete} className="far fa-trash-alt"></i></span>{props.section.title}</h3><span className="timeDisplay">{time}</span></div>
+        <div className="sectionPlace"><h3><span class="fa-stack"><i onClick= {()=>setShowEdit(!showEdit)}className="far fa-edit"></i></span>{props.section.title}</h3><span className="timeDisplay">{time}</span></div>
         {showEdit &&<form className="sectionForm" onSubmit={sectionSubmit}>
+        <i onClick={handleDelete} className="far fa-trash-alt"></i>
             <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
             <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
             <button className="addSection">+ update</button>
         </form>}
           {renderPoints}
+         { plusTalkAdd && <button onClick={handleShowTalkpointForm}>+ Talking Point</button>}
+          {showTalkPointForm &&
+          <div>
+            <button onClick={xButton}>X</button>
           <form onSubmit ={handleAdd}>
-                <input type ="text" onChange={handleNewTalkingPoint} value ={talk}>   
+                <input type ="text" onChange={handleNewTalkingPoint} value ={talk} required="required">   
                 </input>
-                <button>add talking</button>
+                <button>add Talking Point</button>
             </form>
+            </div>
+        }
         {/* <Points points={props.section.talking_points} /> */}
     </div>
     )
