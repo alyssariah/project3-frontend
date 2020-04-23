@@ -13,9 +13,6 @@ function StartPres(props) {
     }
 
     const renderslides = props.presentation.sections.map((section, index)=> {
-        // if((section.time + timeArr[index]) === time.s){
-           
-        // }
         console.log('timeArr', timeArr)
         let number = timeArr[index] + Number(section.time)
         timeArr.push(number)
@@ -31,20 +28,21 @@ function StartPres(props) {
             </div>
         )
     })
+
+
     return(
         <>
-        <Timer timeArr={timeArr} currentIndex={currentIndex} length={renderslides.length}/>
-        <div className="slides">
-            {renderslides[currentIndex]}
-            <div className="controlSlideButtons">
-                <i onClick= {() => {
-                    if(currentIndex != 0){setCurrentIndex(currentIndex -1)}}} class="fas fa-chevron-left"></i>
-                <i onClick= {() => {
-                    if(currentIndex != renderslides.length-1){setCurrentIndex(currentIndex +1)}}}class="fas fa-chevron-right"></i>
+            <Timer timeArr={timeArr} currentIndex={currentIndex} length={renderslides.length}/>
+            <div className="slides">
+                {renderslides[currentIndex]}
+                <div className="controlSlideButtons">
+                    <i onClick= {() => {
+                        if(currentIndex != 0){setCurrentIndex(currentIndex -1)}}} class="fas fa-chevron-left"></i>
+                    <i onClick= {() => {
+                        if(currentIndex != renderslides.length-1){setCurrentIndex(currentIndex +1)}}}class="fas fa-chevron-right"></i>
+                </div>
             </div>
-        </div>
         </>
-
     )
 }
 export default StartPres

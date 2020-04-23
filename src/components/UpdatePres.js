@@ -43,7 +43,6 @@ function UpdatePres(props) {
     }
    const handleNewSectionTitle =(e) =>{
     setcreatSectTitle(e.target.value)
-    
     renderPage()
     
    }
@@ -51,10 +50,9 @@ function UpdatePres(props) {
     const handleNewSectionTime =(e) =>{
         setCreateNewTime(e.target.value)
         renderPage()
-        
        }
 
-   //=========  
+ 
 
     if(!props.presentation){
         return <Redirect to="/"/>
