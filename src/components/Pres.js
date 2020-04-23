@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Points from './Points'
 import '../css/pres.css'
 import {Link, Redirect} from "react-router-dom"
 
 function Pres(props) {
     let totalTime = 0
-    console.log('Pres-props', props)
     if(!props.presentation){
         return <Redirect to="/"/>
     }

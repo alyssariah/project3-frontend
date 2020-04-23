@@ -21,6 +21,7 @@ function NewSection(props) {
             )
         }
     })
+    
   return(
     <div className="section">
         <p>Section {props.index + 1}: {props.section.title} {props.section.time}</p> 
