@@ -3,40 +3,53 @@
 }
 body { 
   height: 100vh;
+  font-family: helvetica;
 }
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-bottom: 30px;
   width: 100%;
   background-color:#E2E2E2;
   height: 6vh;
   z-index: 2;
   border-bottom: 1px solid gray;
+  font-family: helvetica;
 }
-header a{
+header a {
   text-decoration: none;
-  color: black;
+  /* color: black; */
 }
 h1 {
   text-align: center;
   font-size: 22px;
+  font-family: helvetica;
 }
 h1 span {
   font-size: 16px;
 }
 i {
   font-size: 25px;
+  padding: 10px;
 }
-.fa-home{
+.fa-home {
   margin-right: 8px;
 }
+
+.fa-moon, .fa-sun {
+  size: 10px;
+  padding: 20px;
+}
+
 .togglebutton {
   position: absolute;
   top: 8vh;
   left: 10px;
 }
+
 .instructions {
   position: absolute;
   height: 94vh;
@@ -51,6 +64,15 @@ i {
   z-index: 1;
 }
 
+.instructions a {
+  color: gray;
+}
+
+.themespan {
+  font-size: .5em; 
+  padding-left: 15px;
+}
+
 /* .instructions h3 {
   background-color: white;
   padding-top: 100px;
@@ -62,6 +84,7 @@ i {
   padding: 30px;
   border-radius: 10px;
   line-height: 1.35em;
+  font-family: helvetica;
 }
 
 .redtext {
@@ -75,18 +98,30 @@ i {
 .main {
   margin-top : 8vh;
 }
+
+main {
+  border-radius: 20px;
+}
+
 input {
   border-radius: 30px;
   padding: 0 10px;
 }
 button {
   border-radius: 20px;
+  border: 1px solid gray;
+  padding: 5px;
+  font-family: helvetica;
+
 }
 
-main {
-  border-radius: 20px;
-}
 @media(min-width: 768px){
+  header {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    }
+  
   h1 {
     font-size: 30px;
   }
@@ -101,4 +136,23 @@ main {
   }
 }
 
-
+@media (min-width: 1024px){
+  header {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 30px;
+  }
+  h1 span {
+    font-size: 26px;
+  }
+  i {
+    font-size: 32px;
+  }
+  .instructions h3 {
+    padding: 250px;
+  }
+}
