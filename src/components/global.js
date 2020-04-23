@@ -12,14 +12,17 @@ export const GlobalStyles = createGlobalStyle`
 
   h1 {
     color: ${({ theme }) => theme.highlight};
+    transition: all 0.25s linear;
   }
 
   h2, h3, h4 {
     color: ${({ theme }) => theme.text2};
+    transition: all 0.25s linear;
   }
 
   header {
     background: ${({ theme }) => theme.body1};
+    transition: all 0.25s linear;
   }
 
   body {
@@ -31,11 +34,13 @@ export const GlobalStyles = createGlobalStyle`
   button {
     cursor: pointer;
     background: ${({ theme }) => theme.button1};
-    color: ${({ theme }) => theme.text1};
+    color: ${({ theme }) => theme.text1}; 
+    transition: all 0.25s linear;
   }
 
   hr {
     color: ${({ theme }) => theme.text1};
+    transition: all 0.25s linear;
   }
 
   i {
@@ -45,6 +50,8 @@ export const GlobalStyles = createGlobalStyle`
 
  main {
   background: ${({ theme }) => theme.main};
+  transition: all 0.25s linear;
+
  }
 
 `

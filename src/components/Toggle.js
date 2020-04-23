@@ -1,27 +1,42 @@
 import React from 'react'
 import { func, string } from 'prop-types';
-// import styled from 'styled-components';
-// import styles from './Toggle.styled.js';
 
 export default function Toggle({ theme, toggleTheme }){
   const isLight = theme === 'light';
-  let button;
+  let div;
   if (theme === 'light')
-    { button = (
-      <button className="togglebutton" onClick={toggleTheme}>
+    { div = (
+      <div className="togglebutton" onClick={toggleTheme}>
       <i className="moonIcon fas fa-moon"></i>
-      </button>)}
-  else { button = ( 
-      <button className="togglebutton" onClick={toggleTheme}>
+      </div>)}
+  else { div = ( 
+      <div className="togglebutton" onClick={toggleTheme}>
       <i className="sunIcon fas fa-sun"></i>
-      </button>)}
+      </div>)}
   return (
-    <div>
-      {button}
+    <div> 
+      {div}
+      <br />
+      <br />
+      <span className="themespan"> theme</span>
     </div>
   )}
 
 
-// Toggle.propTypes = {
-//   theme: string.isRequired,
-//   toggleTheme: func.isRequired,
+  // export default function Toggle({ theme, toggleTheme }){
+  //   const isLight = theme === 'light';
+  //   let button;
+  //   if (theme === 'light')
+  //     { button = (
+  //       <button className="togglebutton" onClick={toggleTheme}>
+  //       <i className="moonIcon fas fa-moon"></i>
+  //       </button>)}
+  //   else { button = ( 
+  //       <button className="togglebutton" onClick={toggleTheme}>
+  //       <i className="sunIcon fas fa-sun"></i>
+  //       </button>)}
+  //   return (
+  //     <div>
+  //       {button}
+  //     </div>
+  //   )}
