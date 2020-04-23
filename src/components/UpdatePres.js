@@ -8,7 +8,6 @@ import {Redirect} from 'react-router-dom'
 function UpdatePres(props) {   
     console.log('props at top', props.presentation)
     const [name, setName] = useState() 
-    const [freshName, setFreshName] = useState()
     const [currentPresentation, setCurrentPresentation] = useState()
     const [currentSections, setCurrentSections] = useState([])
     const [showEdit, setShowEdit] = useState(false)
@@ -49,7 +48,6 @@ function UpdatePres(props) {
         console.log("yes")
         const json = await getPresById(props.presentation._id)
         setName(json.name)
-        setFreshName(json.name)
         setCurrentPresentation(json)
         setCurrentSections(json.sections)
     }
