@@ -41,19 +41,37 @@ i {
   position: absolute;
   height: 94vh;
   width: 100vw;
+  /* max-width: 800px; */
   top: 6vh;
   background-color: rgba(0,0,0,0.4);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 1;
 }
-.instructions h3 {
+
+/* .instructions h3 {
   background-color: white;
-  padding: 100px;
+  padding-top: 100px;
   border-radius: 10px;
-  z-index: 1;
+} */
+
+.instructions ul {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  line-height: 1.35em;
 }
+
+.redtext {
+  color: red;
+}
+
+.closeInstructions {
+  float: right;
+}
+
 .main {
   margin-top : 8vh;
 }
