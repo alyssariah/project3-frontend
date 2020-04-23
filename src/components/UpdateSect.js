@@ -49,7 +49,6 @@ const handleNewTalkingPoint=(e)=>{
         {showEdit &&<form className="sectionForm" onSubmit={sectionSubmit}>
             <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
             <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
-            {renderPoints}
             <button className="addSection">+ update</button>
             
             <form onSubmit ={handleAdd}>
@@ -58,6 +57,7 @@ const handleNewTalkingPoint=(e)=>{
                 <button>add talking</button>
             </form>
         </form>}
+          {renderPoints}
         {/* <Points points={props.section.talking_points} /> */}
     </div>
     )
