@@ -95,6 +95,11 @@ function UpdatePres(props) {
     const showSectionCreateForm =()=>{
         setCreateForm(!createForm)
     }
+
+    const Blastoff = async() => {
+        const presentation = await getPresById(props.presentation._id)
+        props.clickPresentation(presentation)
+    }
             
     return (
         <div className="updatePresMain">
@@ -143,7 +148,7 @@ function UpdatePres(props) {
 
 
             <p className="time">Total time: {totalTime}</p>
-            
+            <Link to="/pres"><button className="doneButton" onClick={Blastoff}>Done!</button></Link>
         </div>
     )
 }
