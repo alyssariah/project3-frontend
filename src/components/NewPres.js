@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {createPres, getPresById} from '../services/api-helper'
-import {createSect, findById} from '../services/section-api-helper'
+import {createSect} from '../services/section-api-helper'
 import NewSection from './NewSection.js'
 import '../css/newpres.css'
 import {Link} from "react-router-dom"
@@ -21,17 +21,19 @@ function NewPres(props){
     const nameChange = (e) => {
         setName(e.target.value)
     }
+
     const nameSubmit = async(e) => {
         e.preventDefault()
         const json = await createPres({"name": name})
-        console.log("json", json)
         setPresID(json._id)
         setShowStart(false)
         setShowForm(true)
     }
+
     const titleChange = (e) => {
         setTitle(e.target.value)
     }
+
     const timeChange = (e) => {
         setTime(e.target.value)
     }
@@ -39,7 +41,6 @@ function NewPres(props){
     const sectionSubmit = async(e) => {
         e.preventDefault()
         const json = await createSect(presID, {"title": title, "time": time})
-        console.log("sections", json)
         setTotalTime(Number(time) + Number(totalTime))
         setTime('')
         setTitle('')
@@ -48,7 +49,6 @@ function NewPres(props){
 
     const getSections = async() => {
         const presentation = await getPresById(presID)
-        console.log("presentation", presentation)
         setSections(presentation.sections)
     }
 
@@ -59,9 +59,9 @@ function NewPres(props){
 
     const rendersections = sections.map((section, index)=> {
         if(sections.length>0){
-        return(
-            <NewSection section={section} pointSubmit={pointSubmit} index={index}/>
-        )
+            return(
+                <NewSection section={section} pointSubmit={pointSubmit} index={index}/>
+            )
         }
     })
 
@@ -77,7 +77,7 @@ function NewPres(props){
         <div className="addProject">
             <form onSubmit={nameSubmit}>
                 <label>Presentation Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
-                <button>Submit</button>
+                <button><strong>Create</strong></button>
             </form>
         </div>
         }

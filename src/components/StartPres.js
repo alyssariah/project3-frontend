@@ -108,6 +108,8 @@ function StartPres(props) {
             </div>
         )
     })
+
+
     return(
         <div className="main-section">
         <Timer timeArr={timeArr} currentIndex={currentIndex} length={renderslides.length} currentTime={timeArr[currentIndex]}/>
@@ -119,7 +121,6 @@ function StartPres(props) {
             </div>
         </div>
         </div>
-
     )
 }
 export default StartPres

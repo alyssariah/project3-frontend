@@ -28,7 +28,7 @@ input {
 }
 .addProject form button{
     font-size: 16px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 .name {
     height: 40px;

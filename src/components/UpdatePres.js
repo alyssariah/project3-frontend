@@ -2,7 +2,8 @@ import React, {useState, useEffect} from "react"
 import '../css/pres.css'
 import UpdateSect from './UpdateSect'
 import {updatePres, getPresById} from '../services/api-helper'
-import {Redirect} from 'react-router-dom'
+import {createSect} from '../services/section-api-helper'
+import {Redirect, Link} from 'react-router-dom'
 
 
 function UpdatePres(props) {   
@@ -11,7 +12,10 @@ function UpdatePres(props) {
     const [currentPresentation, setCurrentPresentation] = useState()
     const [currentSections, setCurrentSections] = useState([])
     const [showEdit, setShowEdit] = useState(false)
-    
+    const [createForm, setCreateForm]= useState(false)
+    const [creatSectTitle, setcreatSectTitle] =useState('')
+    const [createNewTime, setCreateNewTime] = useState('')
+   
     
     useEffect(() => {
         const APICall = async() => {
@@ -25,6 +29,31 @@ function UpdatePres(props) {
     }, []);
     
     let totalTime = 0
+
+
+//=========  
+
+    console.log("here is props.presention",props.presentation )//_id
+
+    const handleAddSection = async(e)=>{
+        e.preventDefault()
+        const json = await createSect(props.presentation._id,{"title":creatSectTitle, "time":createNewTime})
+        renderPage()
+        setcreatSectTitle("")
+        setCreateNewTime("")
+    }
+   const handleNewSectionTitle =(e) =>{
+    setcreatSectTitle(e.target.value)
+    renderPage()
+    
+   }
+
+    const handleNewSectionTime =(e) =>{
+        setCreateNewTime(e.target.value)
+        renderPage()
+       }
+
+ 
 
     if(!props.presentation){
         return <Redirect to="/"/>
@@ -44,6 +73,9 @@ function UpdatePres(props) {
         // getSections()
     }
 
+
+    
+
     const renderPage = async() => {
         console.log("yes")
         const json = await getPresById(props.presentation._id)
@@ -52,16 +84,27 @@ function UpdatePres(props) {
         setCurrentSections(json.sections)
     }
 
+
     const renderSections = currentSections.map((section, index) => {
         totalTime += section.time
         return (
            <UpdateSect section={section} inedx={index} renderPage={renderPage}/>
+        
         )
     })
+    const showSectionCreateForm =()=>{
+        setCreateForm(!createForm)
+    }
+
+    const Blastoff = async() => {
+        const presentation = await getPresById(props.presentation._id)
+        props.clickPresentation(presentation)
+    }
             
     return (
         <div className="updatePresMain">
             <h2><i onClick= {()=>setShowEdit(!showEdit)} class="far fa-edit"></i>
+            
             {
                  !showEdit
                  &&
@@ -76,6 +119,7 @@ function UpdatePres(props) {
                 showEdit 
                     &&
                 <form className="nameForm" onSubmit={presNameSubmit}>
+                    
                         <p>
                             <label>Presentation Name: </label>
                             <input
@@ -90,9 +134,24 @@ function UpdatePres(props) {
              }
             
         {renderSections}
+        
+
+        {!createForm&&<button onClick ={showSectionCreateForm}>Add Section</button>}
+        {createForm &&  <form onSubmit ={handleAddSection}>
+               <p> <label>Title<input type ="text" onChange={handleNewSectionTitle} value ={creatSectTitle} required="required">   
+                </input></label></p>
+                <p> <label>Time:<input type ="text" onChange={handleNewSectionTime} value ={createNewTime} required="required">   
+                </input></label></p>
+                <button>+ Section</button>
+            </form>}
+
+
             <p className="time">Total time: {totalTime}</p>
+            <Link to="/pres"><button className="doneButton" onClick={Blastoff}>Done!</button></Link>
         </div>
     )
 }
 
 export default UpdatePres
+
+//remember to show create form again or delete the hiding functionality - create a done section to hide

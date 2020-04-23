@@ -19,7 +19,7 @@ export const createPres = async (body) => {
     return resp.data
 }
 
-export const deletePres = async id => {
+export const deletePres = async (id) => {
     const resp = await api.delete(`/pres/${id}`);
     return resp.data
 };
