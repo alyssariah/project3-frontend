@@ -53,8 +53,8 @@ function Home(props){
 
     <div className="main">
       <div className="buttons">
-      <button><Link to ="/new">Create Presentation</Link></button>
-      <button onClick={buttFunction}>Delete Presentation</button>
+      <button><Link to ="/new">Create New</Link></button>
+      <button onClick={buttFunction}>Remove</button>
       </div>
       {!isLoading && <div className="presentationsGroup">{renderPres}</div>}
     </div>

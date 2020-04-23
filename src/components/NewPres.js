@@ -77,7 +77,7 @@ function NewPres(props){
         <div className="addProject">
             <form onSubmit={nameSubmit}>
                 <label>Presentation Name: </label> <input className="name" type="text" value={name} onChange={nameChange} required="required"/>
-                <button>Submit</button>
+                <button><strong>Create</strong></button>
             </form>
         </div>
         }

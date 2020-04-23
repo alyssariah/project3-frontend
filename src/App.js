@@ -56,7 +56,7 @@ function App() {
 	      <Route exact path="/pres" render={()=> <Pres presentation = {presentation} clickPresentation = {clickPresentation}/>}/> 
         <Route exact path="/new" render={()=> <NewPres clickPresentation = {clickPresentation}/>}/>
         <Route exact path="/timer" render={()=> <StartPres presentation = {presentation} />} />
-        <Route exact path="/update" render={()=> <UpdatePres presentation = {presentation} />}/>
+        <Route exact path="/update" render={()=> <UpdatePres presentation = {presentation} clickPresentation = {clickPresentation}/>}/>
         <Redirect to="/"/>
     </Switch>
 
