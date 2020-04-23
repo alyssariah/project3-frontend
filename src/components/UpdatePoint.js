@@ -1,20 +1,20 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import '../css/pres.css'
-import {deleteTalk, createTalk, updateTalk} from '../services/talkpoint-api-helper'
+import {deleteTalk, updateTalk} from '../services/talkpoint-api-helper'
 
- 
 function UpdatePoint(props){
     const [pointBullet, setPointBullet] =useState(props.points)
-    const [subFormReset, setSubFormReset] = useState('')//sub form reset
+    const [subFormReset, setSubFormReset] = useState('')
     const[updatePointTalk, setUpdatePointTalk] = useState('')
     const [currentPoint, setCurrentPoint] = useState()
     const [showUpdateForm, setShowUpdateForm] = useState(false)
     const [hideTalkPointEditing, setHideTalkPointEditing]= useState(true)
-   
+
 
     const updatingPoint =(e)=>{
         setUpdatePointTalk(e.target.value)
     }
+
     
 const showUpdateFormUpdatePoint = ()=>{
     setShowUpdateForm(!showUpdateForm)
@@ -33,6 +33,8 @@ const showUpdateFormUpdatePoint = ()=>{
         props.renderPage()
 
     }
+
+
     return(
         <div className ="changeTalkpoints">
            
