@@ -52,6 +52,7 @@ function UpdatePres(props) {
         setCurrentSections(json.sections)
     }
 
+
     const renderSections = currentSections.map((section, index) => {
         totalTime += section.time
         return (
