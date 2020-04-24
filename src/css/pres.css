@@ -1,6 +1,9 @@
 .presMain, .updatePresMain {
     margin: 0 5vw 0 2vw;
 }
+.presMain a {
+    text-decoration: none;
+}
 h2 {
     text-align: center;
 }
@@ -103,7 +106,6 @@ h2 {
         width: 10vw;
     }
     .presMain .startButton:hover {
-        font-size: 26px;
         width: 7.5vh;
         width: 10.5vw;
     }
