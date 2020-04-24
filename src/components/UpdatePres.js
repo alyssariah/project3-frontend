@@ -98,8 +98,11 @@ function UpdatePres(props) {
             
     return (
         <div className="updatePresMain">
-            <div><Link to='/pres'><button>Back To Presentation</button></Link></div>
-            <h2><i onClick= {()=>setShowEdit(!showEdit)} class="far fa-edit"></i>
+            
+            <div className="buttons">
+    <Link to='/pres'><i class="fas fa-times"></i></Link>
+ </div>
+            <h2><a onClick= {()=>setShowEdit(!showEdit)}>Edit</a>
             
             {
                  !showEdit
