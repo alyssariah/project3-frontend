@@ -7,7 +7,7 @@ export default function Toggle({ theme, toggleTheme }){
   if (theme === 'light')
     { div = (
       <div className="togglebutton" onClick={toggleTheme}>
-      <i className="moonIcon fas fa-moon"></i>
+      <i className="moonIcon far fa-moon"></i>
       </div>)}
   else { div = ( 
       <div className="togglebutton" onClick={toggleTheme}>

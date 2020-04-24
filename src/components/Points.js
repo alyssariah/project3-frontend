@@ -16,7 +16,7 @@ function Points(props) {
                 setShowPoints(!showPoints)
                 setToggleClass(!toggleClass)}
                 } class={toggleClass? "fas fa-plus": "fas fa-minus"}></i>
-            <h3>Section {props.index +1}: {props.section.title} <span className="timeDisplay">{props.section.time}</span></h3>
+            <h3>Section {props.index +1}: <strong>{props.section.title}</strong> <span className="timeDisplay">{props.section.time} min</span></h3>
             </div>
             {showPoints && <ul>{renderPoints}</ul>}
             {/* <button onClick={()=>{

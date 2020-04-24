@@ -41,7 +41,7 @@ i {
 }
 
 .fa-moon, .fa-sun {
-  size: 10px;
+  size: 9px;
   padding: 20px;
 }
 
@@ -128,6 +128,12 @@ button {
   .instructions h3 {
     padding: 250px;
   }
+
+  .fa-moon, .fa-sun {
+    size: 8px;
+    padding: 8px;
+  }
+
 }
 
 @media (min-width: 1024px){
@@ -161,6 +167,11 @@ button {
     font-size: 12px;
     border-radius: 10px;
     line-height: 2;
+}
+
+.fa-moon, .fa-sun {
+  size: 10px;
+  padding: 9px;
 }
 
 }
