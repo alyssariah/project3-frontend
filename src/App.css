@@ -78,6 +78,11 @@ i {
   color: gray;
 }
 
+input {
+  /* background-color: lawngreen; */
+  color: black;
+}
+
 .instructions ul {
   padding: 30px;
   font-size: 13px;
