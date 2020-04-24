@@ -105,14 +105,16 @@ function UpdatePres(props) {
             <div className="buttons">
     <Link to='/pres'><i class="fas fa-check"onClick={Blastoff}></i></Link>
  </div>
-            <h2><a onClick= {()=>setShowEdit(!showEdit)}>Edit</a>
-            
-            {
+         
+            <h2> {
+
                  !showEdit
                  &&
-                 <h2>{name}</h2>
+                 <span>{name} </span>
 
-             }
+             }<a onClick= {()=>setShowEdit(!showEdit)} style={{fontSize:"20px", textDecoration:"underline"}}>Edit</a>
+            
+           
              </h2>
            
             
