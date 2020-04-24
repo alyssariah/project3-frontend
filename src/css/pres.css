@@ -1,29 +1,49 @@
 .presMain, .updatePresMain {
-    margin: 0 30px;
+    margin: 0 5vw 0 2vw;
 }
 h2 {
     text-align: center;
 }
-.presMain h3 {
+/* .presMain h3 {
     display: flex;
     justify-content: space-between;
-}
+} */
 .presMain .fa-edit{
     position: absolute;
     top: 8vh;
     right: 8px;
+}
+.sectionHeader {
+    display: flex;
+    align-items: center;
+}
+.sectionHeader h3{
+    flex: 1;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.fa-plus, .fa-minus{
+    font-size: 12px;
 }
 .sectionPlace {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.presSectionDisplay{
+    margin-top: 15px;
+}
+.presSectionDisplay ul{
+    margin: 0 12vw;
+    padding: 0;
+}
 .startButton {
     border-radius: 5px;
     height: 6vh;
     width: 30vw;
-    /* background-color: #f50a0a; */
     font-size: 16px;
+    margin-bottom: 15px;
 }
 .startTimerClass {
     text-decoration: none;
@@ -38,8 +58,8 @@ h2 {
         padding: 10px;
     }
     .presMain .startButton {
-        width: 30vw;
-        font-size: 20px;
+        width: 25vw;
+        font-size: 24px;
         margin-bottom: 10px;
     }
     .presMain h2 {
@@ -52,8 +72,15 @@ h2 {
         margin: 60px 0;
         font-size: 24px;
     }
+    .fa-plus, .fa-minus{
+        font-size: 18px;
+    }
     .presSectionDisplay {
         margin: 40px 15px;
+    }
+    .presSectionDisplay ul{
+        margin: 0 7vw;
+        padding: 0;
     }
     .sectionPlace h3 {
         font-size: 24px;
@@ -61,9 +88,25 @@ h2 {
     .updatePresMain p {
         font-size: 24px;
     }
+    .time {
+        font-size: 30px;
+    }
 }
 @media(min-width: 1024px){
-    
+    .presMain {
+        margin: 0 5vw 0 2vw;
+    }
+    .presSectionDisplay ul{
+        margin: 0 4vw;
+    }
+    .presMain .startButton {
+        width: 10vw;
+    }
+    .presMain .startButton:hover {
+        font-size: 26px;
+        width: 7.5vh;
+        width: 10.5vw;
+    }
 }
 /* .fa-edit {
     position: relative;

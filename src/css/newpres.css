@@ -1,6 +1,9 @@
 .newPresMain {
     margin-top: 8vh;
 }
+.fa-times {
+    font-size: 35px;
+}
 .addProject{
     display: flex;
     justify-content: center;
@@ -88,6 +91,16 @@ button {
 .section {
     margin-bottom: 30px;
 }
+.section p{
+    margin: 10px 0;
+}
+.section ul {
+    padding: 0;
+    margin: 0px 30px;
+}
+.section ul li {
+    margin: 15px 0;
+}
 .section form {
     display: flex;
     align-items: center;
@@ -103,6 +116,9 @@ button {
 @media(min-width: 768px){
     .newPresMain h1 {
         font-size: 40px;
+    }
+    .fa-times {
+        font-size: 36px;
     }
     .addProject label {
         font-size: 28px;

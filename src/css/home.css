@@ -30,22 +30,29 @@ button a {
     position: relative;
 
 }
+.presList h2 {
+    padding: 40px 70px;
+}
 .presList a {
     text-decoration: none;
 }
-.fa-trash-alt {
+.presList .fa-window-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 5px;
+}
+.fa-plus-circle {
+    font-size: 30px;
 }
 .far:hover {
     cursor: pointer;
   }
 .buttons {
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: 8vh;
-    right: 5px;
+    right: 3px;
 }
 
 .createSubmitButt {
@@ -54,6 +61,17 @@ button a {
 }
 
 @media(min-width: 768px){
+    .fa-plus-circle {
+        font-size: 34px;
+    }
+    .buttons {
+        top: 7vh;
+        right: 10px;
+    }
+    .fa-plus-circle {
+        font-size: 36px;
+    }
+
     .presList {
         width: 40vw;
         height: 25vh;

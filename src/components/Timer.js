@@ -3,7 +3,7 @@ import TimerDisplay from './TimerDisplay'
 import TimerButtons from './TimerButtons'
 
 function Timer(props) {
-    const [time, setTime] = useState({ms:0, s:0, m:0, h:0})
+    const [time, setTime] = useState({ms:0, s:59, m:0, h:0})
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
     // 0 = not started
@@ -47,7 +47,7 @@ function Timer(props) {
     const reset = () => {
         clearInterval(interv)
         setStatus(0)
-        setTime({ms:0, s:0, m:0, h:0})
+        setTime({ms:0, s:59, m:0, h:0})
     };
     const resume = () => start();
 
@@ -58,26 +58,37 @@ function Timer(props) {
             if(props.timeArr[i+1]> time.m){
                 changeColor = false
             }
-            else if((props.timeArr[i+1]) <= time.m){
+            else if((props.timeArr[i+1]) <= time.m-1){
                 changeColor=true
             } 
         }
     }
 
 
-    let timeleft = {s:59 -time.s, m:(props.timeArr[props.currentIndex+1]-1) - time.m}
+    let timeleft = {s:59 -time.s, m:(props.timeArr[props.currentIndex+1])- time.m}
     
     if(timeleft.m < 0){
-        timeleft={s:1+time.s, m:props.timeArr[props.currentIndex+1]-(time.m)}
+        timeleft={s:1+time.s, m:props.timeArr[props.currentIndex]-(time.m)}
     }
-  
+    let totalTime = props.timeArr[props.length -1] * 60
+    let min=0
+    let add = ((time.m-1) * 60) + (time.s+1)
+    let percentage = add * 100 /totalTime
   
 
     return (
+        <>
             <div className="clockWrapper">
+            <div className="progress">
+                <div className="progress-bar" role="progressbar" aria-valuenow={time.s}
+                aria-valuemin="0" aria-valuemax='{totalTime}' style={{width: ((time.m-1) * 60) + (time.s+1)}}>
+                    <p> {time.m-1}&nbsp;:&nbsp;{(time.s >= 10)? (time.s+1) : "0"+ (time.s+1)}</p>
+                </div>
+            </div>
                     <TimerDisplay changeColor= {changeColor} time={timeleft} />
                     <TimerButtons status={status} resume={resume} stop={stop} reset={reset} start={start}/>
             </div>
+        </>    
     )
 }
 
