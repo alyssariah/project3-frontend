@@ -46,13 +46,14 @@ const showUpdateFormUpdatePoint = ()=>{
             {showUpdateForm &&
             <span>
             <form onSubmit={handleEdit}>
-                <li><input type="text" value ={updatePointTalk} onChange ={updatingPoint} placeholder ={props.point.point}/>{!doneEditing && <a onClick={showUpdateFormUpdatePoint}> Done Editing</a>}</li>
-                <button>Update</button>
-            </form><i className ="far fa-trash-alt" onClick={handleDelete}/></span>}
+                <li><input type="text" value ={updatePointTalk} onChange ={updatingPoint} placeholder ={props.point.point}/>{!doneEditing && <a onClick={showUpdateFormUpdatePoint}> Back </a>}
+                <button> Update</button>
+                </li>
+            </form></span>}
             {hideTalkPointEditing &&
             <span>
                <li>Talking Point: {props.point.point}
-               {doneEditing&&<a onClick={showUpdateFormUpdatePoint}> Edit</a>}
+               {doneEditing&& <span><a onClick={showUpdateFormUpdatePoint}> Edit </a><i className ="far fa-window-close" onClick={handleDelete}/></span>}
                </li> 
                </span>}
         </div>
