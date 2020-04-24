@@ -35,7 +35,7 @@ function Pres(props) {
         <div className="presMain">
             <Link to='/update'><i class="far fa-edit"></i></Link>
             <h2>Title: {props.presentation.name}</h2>
-            <Link to="/timer" className="startTimerClass"><button className="startButton">Start</button></Link>
+            <Link to="/timer" className="startTimerClass"><container className="startButton"><span classname="startPresSpan">Start</span></container></Link>
             {renderSections}
             <p className="time">Total time: {totalTime}</p>
         </div>
