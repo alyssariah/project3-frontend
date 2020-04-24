@@ -47,6 +47,7 @@ export const GlobalStyles = createGlobalStyle`
   i {
     color: ${({ theme }) => theme.highlight};
     cursor: pointer;
+    transition: all 0.25s linear;
   }
 
 ol {
@@ -54,6 +55,7 @@ ol {
     color: ${({ theme }) => theme.regulartext};
     padding: 1.2em;
     margin: 16px 0px;
+    transition: all 0.25s linear;
   }
 
 ul {
@@ -61,12 +63,12 @@ ul {
     color: ${({ theme }) => theme.regulartext};
     padding: 30px;
     margin: 16px 0px;
+    transition: all 0.25s linear;
   }
 
   main {
   background: ${({ theme }) => theme.presDivs};
   transition: all 0.25s linear;
-
  }
 
 `
