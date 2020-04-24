@@ -5,3 +5,27 @@
 .fa-trash-alt {
     position: initial
 }
+.sectionPlace h3 {
+    display: flex;
+    align-items: center;
+}
+.sectionForm label {
+    font-size: 18px;
+}
+.sectionForm input {
+    width: 25vw;
+    height: 3vh;
+}
+.sectionForm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.sectionForm button {
+    position: relative;
+    bottom: 0;
+    padding: 5px 10px;
+}
+.sectionForm label, .sectionForm input {
+    margin-right: 10px;
+}

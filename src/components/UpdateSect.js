@@ -70,7 +70,8 @@ const handleNewTalkingPoint=(e)=>{
     })
     return(
         <div>
-       <div className="sectionPlace"><h3>{props.section.title}<span class="fa-stack"><a onClick= {sectionSwitch}> Edit</a><i onClick={handleDelete} className="far fa-trash-alt"></i></span></h3><h3 className="timeDisplay">{time}</h3></div>
+        <div className="sectionPlace"><h3>{props.section.title} &nbsp; <a onClick= {sectionSwitch}style={{fontSize:"20px", textDecoration:"underline"}}> Edit</a><i onClick={handleDelete} className="far fa-trash-alt"></i></h3><h3 className="timeDisplay">{time}</h3></div>
+
         {showEdit &&<form className="sectionForm" onSubmit={sectionSubmit}>
         <i onClick={handleDelete} className="far fa-trash-alt"></i>
             <p><label>Section Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
@@ -82,7 +83,7 @@ const handleNewTalkingPoint=(e)=>{
           {showTalkPointForm &&
           <li>
             <i onClick={xButton} className ="fas fa-arrow-circle-left"></i>
-          <form onSubmit ={handleAdd}>
+          <form className="sectionForm" onSubmit ={handleAdd}>
                 <input type ="text" onChange={handleNewTalkingPoint} value ={talk} required="required">   
                 </input>
                 <button>add Talking Point</button>
