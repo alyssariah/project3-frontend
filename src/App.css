@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 * {
   box-sizing: border-box;
 }
 body { 
   height: 100vh;
-  font-family: helvetica;
+  font-family: 'Roboto', sans-serif;
 }
 header {
   display: flex;
@@ -16,7 +18,7 @@ header {
   height: 6vh;
   z-index: 2;
   border-bottom: 1px solid gray;
-  font-family: helvetica;
+  font-family: 'Roboto', sans-serif;
 }
 header a {
   text-decoration: none;
@@ -25,7 +27,6 @@ header a {
 h1 {
   text-align: center;
   font-size: 22px;
-  font-family: helvetica;
 }
 h1 span {
   font-size: 16px;

@@ -46,7 +46,7 @@ const showUpdateFormUpdatePoint = ()=>{
             </form><i className ="far fa-trash-alt" onClick={handleDelete}/></span>}
             {hideTalkPointEditing &&
                <li>Talking Point: {props.point.point}</li> }
-           <i className="far fa-edit" onClick={showUpdateFormUpdatePoint}/>
+               <i className="far fa-edit" onClick={showUpdateFormUpdatePoint}/>
         </div>
         )
     }
