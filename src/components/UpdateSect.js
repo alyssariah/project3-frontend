@@ -70,9 +70,9 @@ const handleNewTalkingPoint=(e)=>{
     })
     return(
         <div>
-       <div className="sectionPlace"><h3>{props.section.title}<span class="fa-stack"><a onClick= {sectionSwitch}> Edit</a><i onClick={handleDelete} className="far fa-trash-alt"></i></span></h3><h3 className="timeDisplay">{time}</h3></div>
+       <div className="sectionPlace"><h3>{props.section.title}<span class="fa-stack"><a onClick= {sectionSwitch}> Edit</a><i onClick={handleDelete} className="far fa-window-close"></i></span></h3><h3 className="timeDisplay">{time}</h3></div>
         {showEdit &&<form className="sectionForm" onSubmit={sectionSubmit}>
-        <i onClick={handleDelete} className="far fa-trash-alt"></i>
+        <i onClick={handleDelete} className="far fa-window-close"></i>
             <p><label>Section Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
             <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
             <button className="addSection">+ update</button>
@@ -80,14 +80,15 @@ const handleNewTalkingPoint=(e)=>{
           {renderPoints}
          { plusTalkAdd && <button onClick={handleShowTalkpointForm}>+ Talking Point</button>}
           {showTalkPointForm &&
-          <li>
-            <i onClick={xButton} className ="fas fa-arrow-circle-left"></i>
+          
           <form onSubmit ={handleAdd}>
-                <input type ="text" onChange={handleNewTalkingPoint} value ={talk} required="required">   
+                <li><input type ="text" onChange={handleNewTalkingPoint} value ={talk} required="required">   
                 </input>
-                <button>add Talking Point</button>
+                <button> Add Talking Point </button>
+                <button onClick={xButton}> Return</button>
+                </li>
             </form>
-            </li>
+            
         }
         {/* <Points points={props.section.talking_points} /> */}
     </div>

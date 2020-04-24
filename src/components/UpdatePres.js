@@ -84,7 +84,10 @@ function UpdatePres(props) {
         setCurrentSections(json.sections)
     }
 
-
+    const Blastoff = async() => {
+        const presentation = await getPresById(props.presentation._id)
+        props.clickPresentation(presentation)
+    }
     const renderSections = currentSections.map((section, index) => {
         totalTime += section.time
         return (
@@ -100,7 +103,7 @@ function UpdatePres(props) {
         <div className="updatePresMain">
             
             <div className="buttons">
-    <Link to='/pres'><i class="fas fa-times"></i></Link>
+    <Link to='/pres'><i class="fas fa-check"onClick={Blastoff}></i></Link>
  </div>
             <h2><a onClick= {()=>setShowEdit(!showEdit)}>Edit</a>
             
