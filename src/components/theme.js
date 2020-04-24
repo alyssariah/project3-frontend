@@ -1,4 +1,4 @@
-// theme.js
+// theme.js (backup / original theme color options not currently in use)
 
 export const lightTheme = {
     backgroundcolor: '#f0f8ff', 

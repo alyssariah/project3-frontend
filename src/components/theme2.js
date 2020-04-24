@@ -9,20 +9,7 @@ export const lightTheme = {
   gradient: 'linear-gradient(#f4fbf4, #f4fbf4)', 
   boxShadow: '0px -5px 30px gray',
   buttontext: '#080C0A',
-// highlightLightest: 'lightcyan', // plain button color option
 }
-
-// export const lightTheme = {
-//     backgroundcolor: '#f4fbf4', 
-//     presDivs: '#fffafa',  
-//     regulartext: '#363537', 
-//     h1s: '#1C431D', 
-//     highlight: '#1C431D', 
-//     gradient: 'linear-gradient(#567B56, #567B56)', 
-//     boxShadow: '0px -5px 30px gray',
-//     buttontext: 'white',
-//   // highlightLightest: 'lightcyan', // plain button color option
-//   }
   
   export const darkTheme = {
     backgroundcolor: '#1C2321', 
@@ -31,22 +18,6 @@ export const lightTheme = {
     regulartext: '#FAFAFA', 
     h1s: '#61AB66',
     highlight: '#61AB66', 
-    gradient: 'linear-gradient(#376D3A, #376D3A)', // button background
+    gradient: 'linear-gradient(#376D3A, #376D3A)', 
     boxShadow: '0px -5px 60px black',
-    // highlightLightest: 'darkcyan', // button color
   }
-
-  //3a6273 darker
-
-
-  // export const darkTheme = {
-  //   backgroundcolor: '#1C2321', 
-  //   buttontext: '#FFFFFF',
-  //   presDivs: '#323937', 
-  //   regulartext: '#FAFAFA', 
-  //   h1s: '#61AB66',
-  //   highlight: '#61AB66', 
-  //   gradient: 'linear-gradient(#376D3A, #376D3A)', // button background
-  //   boxShadow: '0px -5px 60px black',
-  //   // highlightLightest: 'darkcyan', // button color
-  // }
