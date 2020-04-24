@@ -66,6 +66,10 @@ ul {
     transition: all 0.25s linear;
   }
 
+input {
+  background-color: ${({ theme }) => theme.inputbkg}
+}
+
   main {
   background: ${({ theme }) => theme.presDivs};
   transition: all 0.25s linear;
