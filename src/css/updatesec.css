@@ -9,20 +9,20 @@
     display: flex;
     align-items: center;
 }
-.sectionForm label {
+.updatePresMain .sectionForm label {
     font-size: 18px;
 }
-.sectionForm input {
+.updatePresMain .sectionForm input {
     width: 25vw;
     height: 3vh;
     border-radius: 20px;
 }
-.sectionForm {
+.updatePresMain .sectionForm {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.sectionForm button {
+.updatePresMain .sectionForm button {
     position: relative;
     bottom: 0;
     padding: 5px 10px;
