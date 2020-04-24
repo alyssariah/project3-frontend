@@ -30,8 +30,8 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> 
     <header><Link to ="/"><h1><i class="fas fa-home"></i>Presentation <span>Buddy</span></h1></Link><i onClick={() => setShowInstructions(!showInstructions)} className="fas fa-info-circle"></i></header>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> 
     {showInstructions && 
       <div className="instructions">
         <ul>

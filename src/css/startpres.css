@@ -7,7 +7,10 @@
     align-items: center;
 }
 .progress {
-    width: 70vw;
+    width: 50vw;
+    background-color: lightgray;
+    height: 3vh;
+
 }
 .clockWrapper {
     width: 80vw;
@@ -86,6 +89,9 @@
     font-size: 36px;
 }
 @media(min-width: 768px){
+    .progress {
+        height: 4vh;
+    }
     .clockWrapper {
         margin-top: 6vh;
     }

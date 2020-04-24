@@ -9,6 +9,8 @@ function UpdatePoint(props){
     const [currentPoint, setCurrentPoint] = useState()
     const [showUpdateForm, setShowUpdateForm] = useState(false)
     const [hideTalkPointEditing, setHideTalkPointEditing]= useState(true)
+    const [doneEditing, setDoneEditing]= useState(true)
+    // const [editTalkPoint, setEditTalkPoint]=useState(false)
 
 
     const updatingPoint =(e)=>{
@@ -19,11 +21,14 @@ function UpdatePoint(props){
 const showUpdateFormUpdatePoint = ()=>{
     setShowUpdateForm(!showUpdateForm)
     setHideTalkPointEditing(!hideTalkPointEditing)
+    setDoneEditing(!doneEditing)
+    // setEditTalkPoint(!editTalkPoint)
 }
 
    const handleEdit = async(e) => {
     e.preventDefault()
     const json = await updateTalk(props.point._id, {"point": updatePointTalk})
+    showUpdateFormUpdatePoint()
     props.renderPage()
     }
 
@@ -41,12 +46,15 @@ const showUpdateFormUpdatePoint = ()=>{
             {showUpdateForm &&
             <span>
             <form onSubmit={handleEdit}>
-                <input type="text" value ={updatePointTalk} onChange ={updatingPoint} placeholder ={props.point.point}/>
+                <li><input type="text" value ={updatePointTalk} onChange ={updatingPoint} placeholder ={props.point.point}/>{!doneEditing && <a onClick={showUpdateFormUpdatePoint}> Done Editing</a>}</li>
                 <button>Update</button>
             </form><i className ="far fa-trash-alt" onClick={handleDelete}/></span>}
             {hideTalkPointEditing &&
-               <li>Talking Point: {props.point.point}</li> }
-               <i className="far fa-edit" onClick={showUpdateFormUpdatePoint}/>
+            <span>
+               <li>Talking Point: {props.point.point}
+               {doneEditing&&<a onClick={showUpdateFormUpdatePoint}> Edit</a>}
+               </li> 
+               </span>}
         </div>
         )
     }

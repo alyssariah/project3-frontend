@@ -24,8 +24,15 @@ header {
 header a {
   text-decoration: none;
 }
+a, a:hover, a:active, a:visited, a:focus {
+  text-decoration:none;
+}
+header a:hover {
+  text-decoration: none;
+}
 
 h1 {
+  margin: 0;
   text-align: center;
   font-size: 22px;
 }
@@ -142,9 +149,24 @@ button {
   padding-left: 10px;
   padding-bottom: 20px;
   }
-  
   h1 {
     font-size: 30px;
+  }
+  header h1:hover{
+    font-size: 32px;
+  }
+  header span:hover {
+    font-size: 28px;
+  }
+  a {
+    text-decoration: none;
+  }
+  header a:hover {
+    text-decoration: none;
+  }
+  .fa-home:hover {
+   font-size: 36px;
+   text-decoration: none;
   }
   h1 span {
     font-size: 26px;
@@ -152,7 +174,12 @@ button {
   i {
     font-size: 32px;
   }
-
+  .fa-info-circle:hover {
+    font-size: 36px;
+  }
+  .instructions h3 {
+    padding: 250px;
+  }
   .instructions ul {
     padding: 30px;
     font-size: 12px;

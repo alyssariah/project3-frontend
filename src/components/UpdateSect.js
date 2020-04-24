@@ -12,7 +12,10 @@ function UpdateSect(props){
     const [talk, setTalk] = useState('')
     const [showTalkPointForm, setShowTalkPointForm] =useState(false)
     const [plusTalkAdd, setPlusTalkAdd] = useState(true)
-   
+    const [showEditFormSection, setShowEditFormSection] =useState(true)
+
+    
+
     const handleShowTalkpointForm =()=>{
         setShowTalkPointForm(!showTalkPointForm)
         setPlusTalkAdd(!plusTalkAdd)
@@ -41,13 +44,18 @@ const handleNewTalkingPoint=(e)=>{
         setTitle(e.target.value)
         
     }
+
+    const sectionSwitch =()=>{
+        setShowEdit(!showEdit)
+        setShowEditFormSection(!showEditFormSection)
+    }
     const timeChange = (e) => {
         setTime(e.target.value)
     }
     const sectionSubmit = async(e) => {
         e.preventDefault()
         const json = await updateSect(props.section._id, {"title": title, "time": time})
-        setShowEdit(false)
+        sectionSwitch()
         props.renderPage()
     }
 
@@ -62,24 +70,24 @@ const handleNewTalkingPoint=(e)=>{
     })
     return(
         <div>
-        <div className="sectionPlace"><h3>{props.section.title}<span class="fa-stack"><i onClick= {()=>setShowEdit(!showEdit)}className="far fa-edit"></i><i onClick={handleDelete} className="far fa-trash-alt"></i></span></h3><h3 className="timeDisplay">{time}</h3></div>
+        {showEditFormSection&&<div className="sectionPlace"><h3>{props.section.title}<span class="fa-stack"><a onClick= {sectionSwitch}> Edit</a><i onClick={handleDelete} className="far fa-trash-alt"></i></span></h3><h3 className="timeDisplay">{time}</h3></div>}
         {showEdit &&<form className="sectionForm" onSubmit={sectionSubmit}>
         <i onClick={handleDelete} className="far fa-trash-alt"></i>
-            <p><label>Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
+            <p><label>Section Title: </label><input type="text"  value={title} onChange={titleChange} required="required"/></p>
             <p><label>Time: </label><input type="text" value={time} onChange={timeChange} required="required"/></p>
             <button className="addSection">+ update</button>
         </form>}
           {renderPoints}
          { plusTalkAdd && <button onClick={handleShowTalkpointForm}>+ Talking Point</button>}
           {showTalkPointForm &&
-          <div>
-            <button onClick={xButton}>X</button>
+          <li>
+            <i onClick={xButton} className ="fas fa-arrow-circle-left"></i>
           <form onSubmit ={handleAdd}>
                 <input type ="text" onChange={handleNewTalkingPoint} value ={talk} required="required">   
                 </input>
                 <button>add Talking Point</button>
             </form>
-            </div>
+            </li>
         }
         {/* <Points points={props.section.talking_points} /> */}
     </div>
