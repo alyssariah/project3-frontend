@@ -1,5 +1,6 @@
 button {
-    z-index: 1.5;
+    z-index: 2;
+    margin-top: 10px;
 }
 button a {
     text-decoration: none;
@@ -13,7 +14,7 @@ button a {
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 5vh;
-    height: 90vh;
+    height: 100vh;
     overflow: scroll;
 }
 .presList{
@@ -43,7 +44,7 @@ button a {
 .buttons {
     display: flex;
     position: absolute;
-    top: 10vh;
+    top: 8vh;
     right: 5px;
 }
 
