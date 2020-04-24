@@ -1,6 +1,6 @@
 import React, { useState,  useContext} from 'react';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './components/theme';
+import { lightTheme, darkTheme } from './components/theme2';
 import { GlobalStyles } from './components/global';
 import Toggle from './components/Toggle';
 import Pres from './components/Pres'
