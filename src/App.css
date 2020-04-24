@@ -121,6 +121,10 @@ button {
   i {
     font-size: 32px;
   }
+  .togglebutton {
+    top: 7vh;
+    font-size: 36px;
+  }
   .instructions h3 {
     padding: 250px;
   }

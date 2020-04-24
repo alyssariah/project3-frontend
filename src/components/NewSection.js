@@ -25,7 +25,7 @@ function NewSection(props) {
   return(
     <div className="section">
         <p>Section {props.index + 1}: {props.section.title} {props.section.time}</p> 
-        <ul>{renderPoints}</ul>
+        {renderPoints.length> 0 && <ul>{renderPoints}</ul>}
         <form onSubmit= {pointSubmit}>
         <label className="pointLabel">Add Talking Point: </label> <input type="text" value={valuepoint} onChange={pointChange} required="required"/>
         <button>+</button>

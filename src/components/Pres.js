@@ -26,20 +26,16 @@ function Pres(props) {
     const renderSections = props.presentation.sections.map((section, index) => {
         totalTime += section.time
         return (
-            <div className="presSectionDisplay">
-                <h3>Section {index +1}: {section.title} <span className="timeDisplay">{section.time}</span></h3>
-                <Points points={section.talking_points} />
-            </div>
+                <Points points={section.talking_points} section={section} index={index} />
         )
     })
          
             
     return (
         <div className="presMain">
-            <div><Link to='/'><button>Back To Presentation List</button></Link></div>
             <Link to='/update'><i class="far fa-edit"></i></Link>
             <h2>Title: {props.presentation.name}</h2>
-            <Link to="/timer" className="startTimerClass"><button className="startButton">Start Prensentation</button></Link>
+            <Link to="/timer" className="startTimerClass"><button className="startButton">Start</button></Link>
             {renderSections}
             <p className="time">Total time: {totalTime}</p>
         </div>

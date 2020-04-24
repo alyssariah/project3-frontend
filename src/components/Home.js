@@ -7,7 +7,7 @@ function Home(props){
 
   const [pres, setPres] = useState([])
   const [isLoading, setIsloading] = useState(true)
-  const [showButt,setShowButt] =useState(false)
+  const [showDelete,setShowDelete] =useState(false)
   
   
   useEffect(() => {
@@ -24,14 +24,15 @@ function Home(props){
     const json = await deletePres(id)
     const presArr = pres.filter( trashed => trashed._id !== id)
     setPres(presArr)
+    setShowDelete(false)
   }
 
   const BlastOff =(presentation)=>{
       props.clickPresentation(presentation)
   }
 
-  const buttFunction =()=>{
-    setShowButt(!showButt)
+  const deleteFunction =()=>{
+    setShowDelete(!showDelete)
   }
 
 
@@ -42,8 +43,9 @@ function Home(props){
           <Link to ="/pres">
             <h2 onClick ={()=>BlastOff(pres)} >{pres.name}</h2>
           </Link>
-          {showButt &&
-          <i onClick={() =>handleDelete(pres._id)} class="far fa-trash-alt"></i>}
+          {/* {showDelete && */}
+          <i onClick={() =>handleDelete(pres._id)}class="far fa-window-close"></i>
+          {/* // <i onClick={() =>handleDelete(pres._id)}class="fas fa-trash-alt"></i>} */}
         </main> 
         )
     })
@@ -53,8 +55,7 @@ function Home(props){
 
     <div className="main">
       <div className="buttons">
-      <button><Link to ="/new">Create New</Link></button>
-      <button onClick={buttFunction}>Remove</button>
+      <Link to ="/new"><i class="fas fa-plus-circle"></i></Link>
       </div>
       {!isLoading && <div className="presentationsGroup">{renderPres}</div>}
     </div>

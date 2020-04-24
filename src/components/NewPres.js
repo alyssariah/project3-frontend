@@ -72,6 +72,9 @@ function NewPres(props){
 
     return(
         <div className="newPresMain">
+            <div className="buttons">
+               <Link to='/'><i class="fas fa-times"></i></Link>
+            </div>
         <h1>Create a New Presentation</h1>
         {showStart && 
         <div className="addProject">

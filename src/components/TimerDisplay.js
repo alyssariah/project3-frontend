@@ -15,7 +15,7 @@ function TimerDisplay(props) {
     return (
         <div className="clockDiv">
             {/* {h()}&nbsp;&nbsp; */}
-            <p style={{color: props.changeColor? "red": "black"}}>{props.time.m}&nbsp;:&nbsp;{(props.time.s >= 10)? props.time.s : "0"+ props.time.s}</p>
+            <p style={{color: props.changeColor? "red": "white"}}>{props.time.m}&nbsp;:&nbsp;{(props.time.s >= 10)? props.time.s : "0"+ props.time.s}</p>
         </div>
     )
 }

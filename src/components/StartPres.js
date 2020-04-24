@@ -2,8 +2,7 @@ import React, {useState, useEffect, useRef } from "react"
 import Timer from './Timer'
 import{Redirect} from 'react-router-dom'
 import '../css/startpres.css'
-import TimerDisplay from './TimerDisplay'
-import TimerButtons from './TimerButtons'
+import {Link} from 'react-router-dom'
 
 function StartPres(props) {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -112,6 +111,9 @@ function StartPres(props) {
 
     return(
         <div className="main-section">
+            <div className="buttons">
+               <Link to='/pres'><i class="fas fa-times"></i></Link>
+            </div>
         <Timer timeArr={timeArr} currentIndex={currentIndex} length={renderslides.length} currentTime={timeArr[currentIndex]}/>
         <div className="slides">
             {renderslides[currentIndex]}
