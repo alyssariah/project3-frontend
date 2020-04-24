@@ -6,9 +6,9 @@ export const lightTheme = {
   regulartext: '#363537', 
   h1s: '#080C0A', 
   highlight: '#080C0A', 
-  gradient: 'linear-gradient(#f4fbf4, #000000)', 
+  gradient: 'linear-gradient(#f4fbf4, #f4fbf4)', 
   boxShadow: '0px -5px 30px gray',
-  buttontext: '#1C431D',
+  buttontext: '#080C0A',
 // highlightLightest: 'lightcyan', // plain button color option
 }
 
