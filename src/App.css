@@ -78,9 +78,9 @@ i {
 
 .instructions ul {
   padding: 30px;
-  font-size: 10px;
+  font-size: 13px;
   border-radius: 10px;
-  line-height: 1.35em;
+  line-height: 1.5em;
   height: 60vh;
   width: 90vw;
 }
@@ -108,7 +108,7 @@ input {
 }
 button {
   border-radius: 20px;
-  border: 0px;
+  border: 1px solid #376D3A;
   padding: 5px;
 }
 
@@ -174,4 +174,20 @@ button {
   .instructions h3 {
     padding: 250px;
   }
+  .instructions ul {
+    padding: 30px;
+    font-size: 12px;
+    border-radius: 10px;
+    /* line-height: 1; */
+    /* height: 60vh;
+    width: 90vw; */
+  }
+
+  .instructions ol {
+    padding: 30px;
+    font-size: 12px;
+    border-radius: 10px;
+    line-height: 2;
+}
+
 }
