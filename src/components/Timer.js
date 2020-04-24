@@ -68,12 +68,13 @@ function Timer(props) {
     let timeleft = {s:59 -time.s, m:(props.timeArr[props.currentIndex+1])- time.m}
     
     if(timeleft.m < 0){
-        timeleft={s:1+time.s, m:props.timeArr[props.currentIndex]-(time.m)}
+        timeleft={s:1+time.s, m:props.timeArr[props.currentIndex+1]-(time.m-1)}
     }
-    let totalTime = props.timeArr[props.length -1] * 60
+    let totalTime = props.timeArr[props.timeArr.length -1] * 60
     let min=0
     let add = ((time.m-1) * 60) + (time.s+1)
-    let percentage = add * 100 /totalTime
+    let percentage = ((((time.m-1) * 60) + (time.s+1))/totalTime) *100
+    console.log("totalTime", totalTime)
   
 
     return (
@@ -81,8 +82,8 @@ function Timer(props) {
             <div className="clockWrapper">
             <div className="progress">
                 <div className="progress-bar" role="progressbar" aria-valuenow={time.s}
-                aria-valuemin="0" aria-valuemax='{totalTime}' style={{width: ((time.m-1) * 60) + (time.s+1)}}>
-                    <p> {time.m-1}&nbsp;:&nbsp;{(time.s >= 10)? (time.s+1) : "0"+ (time.s+1)}</p>
+                aria-valuemin="0" aria-valuemax='{totalTime}' style={{width: `${percentage}%`, backgroundColor: "#61AB66"}}>
+                    {/* <p> {time.m-1}&nbsp;:&nbsp;{(time.s >= 10)? (time.s+1) : "0"+ (time.s+1)}</p> */}
                 </div>
             </div>
                     <TimerDisplay changeColor= {changeColor} time={timeleft} />
