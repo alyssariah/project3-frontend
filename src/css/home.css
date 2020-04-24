@@ -88,4 +88,10 @@ button a {
         height: 30vh;
         margin: 10px 40px;
     }
+    .fa-plus-circle:hover {
+        font-size: 40px;
+    }
+    .fa-window-close:hover {
+        font-size: 36px;
+    }
 }
