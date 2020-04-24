@@ -24,6 +24,7 @@ const showUpdateFormUpdatePoint = ()=>{
    const handleEdit = async(e) => {
     e.preventDefault()
     const json = await updateTalk(props.point._id, {"point": updatePointTalk})
+    showUpdateFormUpdatePoint()
     props.renderPage()
     }
 
@@ -41,7 +42,7 @@ const showUpdateFormUpdatePoint = ()=>{
             {showUpdateForm &&
             <span>
             <form onSubmit={handleEdit}>
-                <input type="text" value ={updatePointTalk} onChange ={updatingPoint} placeholder ={props.point.point}/>
+                <li><input type="text" value ={updatePointTalk} onChange ={updatingPoint} placeholder ={props.point.point}/></li>
                 <button>Update</button>
             </form><i className ="far fa-trash-alt" onClick={handleDelete}/></span>}
             {hideTalkPointEditing &&
