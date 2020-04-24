@@ -82,7 +82,6 @@ const handleNewTalkingPoint=(e)=>{
           {showTalkPointForm &&
           <form onSubmit ={handleAdd}>
                 <li><input type ="text" onChange={handleNewTalkingPoint} value ={talk} required="required"/>   
-            <i onClick={xButton} className ="fas fa-arrow-circle-left"></i>
                 <button> Add Talking Point </button>
                 <button onClick={xButton}> Return</button>
                 </li>
