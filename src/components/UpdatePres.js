@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import '../css/pres.css'
+import '../css/updatesec.css'
 import UpdateSect from './UpdateSect'
 import {updatePres, getPresById} from '../services/api-helper'
 import {createSect} from '../services/section-api-helper'
@@ -102,23 +102,11 @@ function UpdatePres(props) {
         <div className="buttons">
             <Link to='/pres'><i class="fas fa-times"></i></Link>
         </div>
-            <h2> {
-                 !showEdit
-                 &&
-                 <span>{name} </span>
-
-             }<a onClick= {()=>setShowEdit(!showEdit)} style={{fontSize:"20px", textDecoration:"underline"}}>Edit</a>
-            
-           
-             </h2>
-           
-            
-            
+        {currentPresentation && <h2><span>{currentPresentation.name} </span><a onClick= {()=>setShowEdit(!showEdit)} style={{fontSize:"20px", textDecoration:"underline"}}>Edit</a></h2>}
             {
                 showEdit 
                     &&
                 <form className="nameForm" onSubmit={presNameSubmit}>
-                    
                         <p>
                             <label>Presentation Name: </label>
                             <input
@@ -136,7 +124,7 @@ function UpdatePres(props) {
         
 
         {!createForm&&<button onClick ={showSectionCreateForm}>Add Section</button>}
-        {createForm &&  <form onSubmit ={handleAddSection}>
+        {createForm &&  <form className="sectionForm" onSubmit ={handleAddSection}>
                <p> <label>Title<input type ="text" onChange={handleNewSectionTitle} value ={creatSectTitle}>   
                 </input></label></p>
                 <p> <label>Time:<input type ="text" onChange={handleNewSectionTime} value ={createNewTime}>   

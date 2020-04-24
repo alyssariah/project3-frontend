@@ -15,6 +15,7 @@
 .sectionForm input {
     width: 25vw;
     height: 3vh;
+    border-radius: 20px;
 }
 .sectionForm {
     display: flex;
@@ -28,4 +29,22 @@
 }
 .sectionForm label, .sectionForm input {
     margin-right: 10px;
+}
+.updatePresMain .nameForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+.nameForm input {
+    height: 4vh;
+    font-size: 20px;
+}
+.nameForm label {
+    font-size: 20px;
+}
+.addProject p {
+    font-size: 24px;
 }
