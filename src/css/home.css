@@ -8,6 +8,7 @@ button a {
     font-size: 1.3em;
     padding: .5em;
 }
+
 .presentationsGroup {
     display: flex;
     justify-content: center;

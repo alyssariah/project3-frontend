@@ -1,22 +1,21 @@
 // theme.js
+
 export const lightTheme = {
-    body1: 'aliceblue',
-    text1: '#363537',
-    text2: 'darkcyan',
-    button1: 'lightcyan',
-    highlight: 'darkblue',
-    main: 'snow',
-    // toggleBorder: '#FFF',
-    // gradient: 'linear-gradient(#39598A, #79D7ED)',
+    backgroundcolor: '#f0f8ff', 
+    presDivs: '#fffafa',  
+    regulartext: '#363537', 
+    h1s: '#00008b', 
+    highlight: '#008b8b', 
+    gradient: 'linear-gradient(#FFFFFF, #79D7ED)', 
+  // highlightLightest: 'lightcyan', // plain button color option
   }
   
   export const darkTheme = {
-    body1: '#363537',
-    text1: '#FAFAFA',
-    text2: 'lightcyan',
-    button1: 'darkcyan',
-    highlight: 'aliceblue',
-    main: '#403e41',
-    // toggleBorder: '#6B8096',
-    // gradient: 'linear-gradient(#091236, #1E215D)',
+    backgroundcolor: '#363537', 
+    presDivs: '#403e41', 
+    regulartext: '#FAFAFA', 
+    h1s: '#f0f8ff',
+    highlight: '#f0f8ff', //light cyan
+    gradient: 'linear-gradient(#008b8b, #006f6f)', // button background
+    // highlightLightest: 'darkcyan', // button color
   }
