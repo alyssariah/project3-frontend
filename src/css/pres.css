@@ -119,11 +119,4 @@ h2 {
     .presMain .startButton {
         width: 10vw;
     }
-    .presMain .startButton:hover {
-        width: 7.5vh;
-        width: 10.5vw;
-    }
 }
-/* .fa-edit {
-    position: relative;
-} */
