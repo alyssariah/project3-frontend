@@ -11,35 +11,36 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-    color: ${({ theme }) => theme.highlight};
+    color: ${({ theme }) => theme.h1s};
     transition: all 0.25s linear;
   }
 
   h2, h3, h4 {
-    color: ${({ theme }) => theme.text2};
+    color: ${({ theme }) => theme.highlight};
     transition: all 0.25s linear;
   }
 
   header {
-    background: ${({ theme }) => theme.body1};
+    background: ${({ theme }) => theme.presDivs};
     transition: all 0.25s linear;
+    box-shadow: ${({ theme }) => theme.boxShadow};
   }
 
   body {
-    background: ${({ theme }) => theme.body1};
-    color: ${({ theme }) => theme.text1};
+    background: ${({ theme }) => theme.backgroundcolor};
+    color: ${({ theme }) => theme.regulartext};
     transition: all 0.25s linear;
   }
 
   button {
     cursor: pointer;
-    background: ${({ theme }) => theme.button1};
-    color: ${({ theme }) => theme.text1}; 
+    background: ${({ theme }) => theme.gradient};
+    color: ${({ theme }) => theme.buttontext}; 
     transition: all 0.25s linear;
   }
 
   hr {
-    color: ${({ theme }) => theme.text1};
+    color: ${({ theme }) => theme.regulartext};
     transition: all 0.25s linear;
   }
 
@@ -49,21 +50,21 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 ol {
-    background-color: ${({ theme }) => theme.body1};
-    color: ${({ theme }) => theme.text1};
+    background-color: ${({ theme }) => theme.backgroundcolor};
+    color: ${({ theme }) => theme.regulartext};
     padding: 1.2em;
     margin: 16px 0px;
   }
 
-  ul {
-    background-color: ${({ theme }) => theme.body1};
-    color: ${({ theme }) => theme.text1};
+ul {
+    background-color: ${({ theme }) => theme.backgroundcolor};
+    color: ${({ theme }) => theme.regulartext};
     padding: 30px;
     margin: 16px 0px;
   }
 
   main {
-  background: ${({ theme }) => theme.main};
+  background: ${({ theme }) => theme.presDivs};
   transition: all 0.25s linear;
 
  }
