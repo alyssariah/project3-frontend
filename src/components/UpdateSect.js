@@ -81,10 +81,8 @@ const handleNewTalkingPoint=(e)=>{
          { plusTalkAdd && <button onClick={handleShowTalkpointForm}>+ Talking Point</button>}
           {showTalkPointForm &&
           <form onSubmit ={handleAdd}>
-                <li><input type ="text" onChange={handleNewTalkingPoint} value ={talk} required="required">   
+                <li><input type ="text" onChange={handleNewTalkingPoint} value ={talk} required="required"/>   
             <i onClick={xButton} className ="fas fa-arrow-circle-left"></i>
-      
-                </input>
                 <button> Add Talking Point </button>
                 <button onClick={xButton}> Return</button>
                 </li>
